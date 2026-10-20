@@ -1,0 +1,31 @@
+backend/.env
+backend/.env.*
+!backend/.env.example
+backend/app.db
+backend/app.db-*
+backend/uploads/
+backend/app/uploads/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+
+# ML model weights (large binary files)
+backend/models/
+*.pth
+*.pt
+*.onnx
+*.pkl
+
+# ML training cache
+ml/__pycache__/
+ml/*.pyc
+
+# Dataset (already in repo, but exclude augmented outputs)
+*.rfinfo
+CHEMVISION.v7i.coco/

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChemVision AI — Chemistry, made visible.</title>
+<script>
+  try {
+    const savedTheme = localStorage.getItem("chemvision_theme");
+    document.documentElement.setAttribute("data-theme", savedTheme ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  } catch (_) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0f9f6;
+  --panel:#ffffff;
+  --ink:#06212c;
+  --ink-2:#0b2b38;
+  --muted:#5d7580;
+  --accent:#00a37a;
+  --accent-2:#0cbf90;
+  --line:rgba(6,33,44,.10);
+  --grid:rgba(0,163,122,.09);
+  --dark:#06222c;
+  --dark-2:#0a2c38;
+  --radius:14px;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --bg:#071317;--panel:#0e2228;--ink:#e9f6f2;--ink-2:#d6e9e5;
+  --muted:#9cb5b7;--accent:#20c997;--accent-2:#44ddb1;
+  --line:rgba(233,246,242,.14);--grid:rgba(32,201,151,.08);
+  --dark:#091a1e;--dark-2:#10252a;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,"Helvetica Neue",Arial,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.grid-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,var(--grid) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--grid) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 78%,transparent 100%);
+}
+
+/* ---------- header ---------- */
+header{position:absolute;inset-inline:0;top:0;z-index:40}
+.nav{display:flex;align-items:center;gap:40px;padding:22px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.brand .mark{
+  width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(0,163,122,.12);box-shadow:0 0 0 1px rgba(0,163,122,.25),0 0 28px rgba(0,163,122,.35);
+}
+.brand .mark i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(0,163,122,.18)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:34px;margin:0 auto;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+.nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.home-theme-toggle{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);cursor:pointer}
+.home-theme-toggle svg{width:18px;height:18px}
+.home-theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.signin{font-size:14.5px;font-weight:600}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;
+  font-family:inherit;font-size:14.5px;font-weight:600;border-radius:8px;
+  padding:13px 22px;background:var(--accent);color:#fff;
+  transition:transform .15s ease,background .15s ease;
+}
+.btn:hover{background:#008f6b}
+.btn:active{transform:translateY(1px)}
+.btn.lg{padding:17px 28px;font-size:15.5px;border-radius:9px}
+.btn.light{background:#e6f6f0;color:var(--ink)}
+.btn.light:hover{background:#d6efe6}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;overflow:hidden;padding-top:112px}
+.hero-inner{
+  position:relative;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;
+  gap:32px;min-height:calc(92vh - 7rem);padding-bottom:64px;
+}
+.pill{
+  display:inline-flex;align-items:center;gap:9px;border-radius:999px;
+  padding:9px 18px;background:rgba(0,163,122,.10);
+  border:1px solid rgba(0,163,122,.28);
+  font-size:12px;font-weight:700;letter-spacing:.12em;color:#03906d;
+}
+.pill svg{width:14px;height:14px}
+h1{
+  font-size:clamp(46px,7vw,100px);line-height:.95;letter-spacing:-.045em;
+  font-weight:800;margin:26px 0 0;max-width:12ch;
+}
+h1 .g{color:var(--accent);display:block}
+.hero p.lede{
+  margin:34px 0 0;max-width:46ch;font-size:17.5px;line-height:1.65;color:var(--muted);
+}
+.cta-row{display:flex;align-items:center;gap:22px;margin-top:40px;flex-wrap:wrap}
+.cta-note{font-size:14px;color:var(--muted)}
+
+/* stage */
+.stage{position:relative;height:430px;min-width:0}
+.ring{position:absolute;border-radius:50%}
+.ring.a{inset:8%;border:1px solid rgba(0,163,122,.10)}
+.ring.b{inset:18%;border:1px dashed rgba(0,163,122,.16);animation:spin 46s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#mol{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+#mol:active{cursor:grabbing}
+.badge{
+  position:absolute;bottom:26px;left:12px;border-radius:9px;border:1px solid var(--line);
+  background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+  padding:9px 14px;font-size:12.5px;color:var(--ink-2);
+  box-shadow:0 10px 30px rgba(6,33,44,.07);display:flex;align-items:center;gap:9px;
+}
+html[data-theme="dark"] .badge{background:rgba(14,34,40,.9);color:var(--ink);border-color:var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero-rule{position:absolute;bottom:0;inset-inline:0;height:1px;background:var(--line)}
+
+/* ---------- stats ---------- */
+.stats{position:relative;border-bottom:1px solid var(--line)}
+.stats .row{display:flex;gap:56px;padding:22px 0}
+.stat{display:flex;align-items:baseline;gap:10px}
+.stat b{font-size:19px;font-weight:800;letter-spacing:-.02em}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* ---------- capabilities ---------- */
+.caps{padding:104px 0 112px}
+.caps-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+h2{font-size:clamp(34px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:800;margin:26px 0 0;max-width:14ch}
+.caps-head p{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--muted);max-width:52ch}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.card{padding:32px 34px 60px;border-right:1px solid var(--line)}
+.card:last-child{border-right:0}
+.card-top{display:flex;align-items:center;justify-content:space-between}
+.icon{width:46px;height:46px;border-radius:11px;background:rgba(0,163,122,.11);display:grid;place-items:center;color:var(--accent)}
+.icon svg{width:22px;height:22px}
+.num{font-size:12px;color:#93a8b0;font-variant-numeric:tabular-nums}
+.card h3{font-size:25px;font-weight:800;letter-spacing:-.03em;margin:66px 0 16px}
+.card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.62;max-width:38ch}
+
+/* ---------- workflow ---------- */
+.work{background:var(--dark);color:#eaf4f1;border-top:1px solid var(--line)}
+.work .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-top:112px;padding-bottom:112px}
+.work .pill{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#cfe7df}
+.work h2{color:#fff;max-width:16ch}
+.work p{color:#9fb6bd;font-size:16.5px;line-height:1.65;margin:22px 0 0;max-width:46ch}
+.work .btn.light{margin-top:36px}
+.panel{
+  background:var(--dark-2);border:1px solid rgba(255,255,255,.09);border-radius:12px;
+  padding:26px 26px 34px;min-height:330px;
+}
+.panel-top{display:flex;justify-content:space-between;font-size:14px;color:#a9c0c7}
+.eq{
+  display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin:48px 0 42px;font-size:19px;font-weight:600;letter-spacing:.01em;color:#eef7f4;
+}
+.eq .arrow{color:var(--accent-2)}
+.eq sub{font-size:.68em}
+.bar{height:5px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar i{display:block;height:100%;width:58%;background:var(--accent);border-radius:99px}
+html[data-theme="dark"] .work .btn.light{background:#16342e;color:#e9f6f2}
+
+/* ---------- footer ---------- */
+footer{display:flex;justify-content:space-between;gap:16px;padding:30px 0;font-size:13.5px;color:var(--muted)}
+
+@media (max-width:1000px){
+  .wrap{padding:0 24px}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;padding-top:24px}
+  .stage{height:360px;order:-1}
+  .caps-head,.work .wrap,.cards{grid-template-columns:1fr}
+  .card{border-right:0;border-bottom:1px solid var(--line);padding-bottom:36px}
+  .card h3{margin-top:34px}
+  .stats .row{gap:28px;flex-wrap:wrap}
+  h1{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ring.b,.dot{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="mark"><i></i></div>ChemVision <span>AI</span></div>
+    <nav class="nav-links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#capabilities">How it works</a>
+      <a href="#workflow">Workspace</a>
+    </nav>
+    <div class="nav-right">
+      <button class="home-theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Toggle color theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a class="signin" href="signup.html">Sign in</a>
+      <a class="btn" href="dashboard.html">Start exploring</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="grid-bg"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <div class="pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.8L18.4 8.4 13.6 10 12 14.8 10.4 10 5.6 8.4 10.4 6.8 12 2zM18.5 14l.8 2.3 2.2.8-2.2.8-.8 2.3-.8-2.3-2.2-.8 2.2-.8.8-2.3z"/></svg>
+          INTELLIGENT REACTION VISUALIZATION
+        </div>
+        <h1>Chemistry,<span class="g">made visible.</span></h1>
+        <p class="lede">Transform reaction images into interactive 3D molecular stories. Inspect every atom, follow every bond, and learn what truly happens.</p>
+        <div class="cta-row">
+          <a class="btn lg" href="dashboard.html">Explore reactions &nbsp;→</a>
+          <span class="cta-note">No installation required</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="ring a"></div>
+        <div class="ring b"></div>
+        <canvas id="mol"></canvas>
+        <div class="badge"><span class="dot"></span> Live molecular field</div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap row">
+      <div class="stat"><b>3D</b><span>molecular models</span></div>
+      <div class="stat"><b>360°</b><span>exploration</span></div>
+      <div class="stat"><b>5</b><span>guided reaction steps</span></div>
+    </div>
+  </section>
+
+  <section class="caps" id="capabilities">
+    <div class="wrap">
+      <div class="caps-head">
+        <div>
+          <div class="pill">FROM IMAGE TO INSIGHT</div>
+          <h2>A clearer way to study reactions.</h2>
+        </div>
+        <p>ChemVision brings the spatial logic of a laboratory model into a focused learning workspace—without losing the precision of the equation.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h3l2-2.5h8L18 8h3v11H3z"/><circle cx="12" cy="13" r="3.4"/></svg></div>
+            <span class="num">01</span>
+          </div>
+          <h3>Recognize</h3>
+          <p>Upload a handwritten or printed reaction. The workspace prepares every compound for exploration.</p>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="9.5" ry="4.5" transform="rotate(35 12 12)"/><ellipse cx="12" cy="12" rx="9.5" ry="4.5" transform="rotate(-35 12 12)"/></svg></div>
+            <span class="num">02</span>
+          </div>
+          <h3>Visualize</h3>
+          <p>Move beyond flat equations with rotatable molecular structures, bonds, and spatial context.</p>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8V5.5A1.5 1.5 0 015.5 4H8M16 4h2.5A1.5 1.5 0 0120 5.5V8M20 16v2.5a1.5 1.5 0 01-1.5 1.5H16M8 20H5.5A1.5 1.5 0 014 18.5V16"/><path d="M8.5 12h7"/></svg></div>
+            <span class="num">03</span>
+          </div>
+          <h3>Understand</h3>
+          <p>Follow bond changes step by step with conditions, mechanisms, and reaction insights in one view.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="workflow">
+    <div class="wrap">
+      <div>
+        <div class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v6.2L5.2 18A2 2 0 007 21h10a2 2 0 001.8-3L14 9.2V3"/></svg>
+          REACTION WORKSPACE
+        </div>
+        <h2>One equation.<br>Every dimension.</h2>
+        <p>Playback controls reveal the reaction sequence while the molecular canvas stays fully rotatable and zoomable.</p>
+        <a class="btn light" href="visualizer.html">Open sample reaction &nbsp;→</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-top"><span>Fischer esterification</span><span>Step 03 / 05</span></div>
+        <div class="eq">
+          <span>CH<sub>3</sub>COOH</span><span>+</span><span>C<sub>2</sub>H<sub>5</sub>OH</span>
+          <span class="arrow">→</span>
+          <span>CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub></span><span>+</span><span>H<sub>2</sub>O</span>
+        </div>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap"><footer><span>© 2026 ChemVision AI</span><span>Built for curious scientific minds.</span></footer></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/theme.js"></script>
+<script>
+(function(){
+  const canvas = document.getElementById('mol');
+  if (!window.THREE || !canvas) return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0, 11.5);
+
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  const key = new THREE.DirectionalLight(0xffffff, 0.95); key.position.set(-4, 6, 8); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xbfe9dc, 0.45); rim.position.set(6, -3, -6); scene.add(rim);
+  const spec = new THREE.PointLight(0xffffff, 0.6); spec.position.set(-3, 4, 6); scene.add(spec);
+
+  const COLORS = { C:0x122b3c, O:0xd4472f, H:0xeef3f5 };
+  const RADII  = { C:0.62, O:0.66, H:0.36 };
+
+  // methoxyethane-like skeleton: C-C-O-C, matching the hero render
+  const atoms = [
+    {e:'C', p:[-2.25,-0.35, 0.05]},   // 0
+    {e:'C', p:[-0.95, 0.55, 0.20]},   // 1
+    {e:'O', p:[ 0.35,-0.30, 0.00]},   // 2
+    {e:'C', p:[ 1.75, 0.50,-0.10]},   // 3
+    {e:'H', p:[-2.25,-1.45, 0.35]},   // on 0
+    {e:'H', p:[-3.15, 0.10, 0.45]},
+    {e:'H', p:[-2.45,-0.35,-1.05]},
+    {e:'H', p:[-0.95, 1.30,-0.70]},   // on 1
+    {e:'H', p:[-0.85, 1.15, 1.20]},
+    {e:'H', p:[ 1.85, 1.20,-0.95]},   // on 3
+    {e:'H', p:[ 1.90, 1.10, 0.80]},
+    {e:'H', p:[ 2.55,-0.25,-0.05]}
+  ];
+  const bonds = [[0,1],[1,2],[2,3],[0,4],[0,5],[0,6],[1,7],[1,8],[3,9],[3,10],[3,11]];
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const sphereGeo = new THREE.SphereGeometry(1, 48, 48);
+  const mats = {};
+  function mat(e){
+    if(!mats[e]) mats[e] = new THREE.MeshPhongMaterial({
+      color: COLORS[e], shininess: e==='H' ? 70 : 90,
+      specular: e==='H' ? 0x777777 : 0xbbbbbb
+    });
+    return mats[e];
+  }
+
+  atoms.forEach(a=>{
+    const m = new THREE.Mesh(sphereGeo, mat(a.e));
+    m.scale.setScalar(RADII[a.e]);
+    m.position.fromArray(a.p);
+    group.add(m);
+  });
+
+  const bondGeo = new THREE.CylinderGeometry(1,1,1,20,1,true);
+  const bondMat = new THREE.MeshPhongMaterial({color:0xcfdbe0, shininess:40});
+  const up = new THREE.Vector3(0,1,0);
+  bonds.forEach(([i,j])=>{
+    const a = new THREE.Vector3().fromArray(atoms[i].p);
+    const b = new THREE.Vector3().fromArray(atoms[j].p);
+    const dir = new THREE.Vector3().subVectors(b,a);
+    const len = dir.length();
+    const cyl = new THREE.Mesh(bondGeo, bondMat);
+    cyl.scale.set(0.11, len, 0.11);
+    cyl.position.copy(a).addScaledVector(dir, 0.5);
+    cyl.quaternion.setFromUnitVectors(up, dir.clone().normalize());
+    group.add(cyl);
+  });
+
+  // interaction
+  let targetX = 0.12, targetY = 0.5, curX = 0.12, curY = 0.5;
+  let auto = true, dragging = false, lastX = 0, lastY = 0;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  canvas.addEventListener('pointerdown', e=>{
+    dragging = true; auto = false; lastX = e.clientX; lastY = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', e=>{
+    if(!dragging) return;
+    targetY += (e.clientX - lastX) * 0.006;
+    targetX += (e.clientY - lastY) * 0.005;
+    targetX = Math.max(-1.1, Math.min(1.1, targetX));
+    lastX = e.clientX; lastY = e.clientY;
+  });
+  ['pointerup','pointercancel','pointerleave'].forEach(t=>
+    canvas.addEventListener(t, ()=>{ dragging = false; auto = true; })
+  );
+
+  function resize(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if(!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.fov = w < 520 ? 46 : 38;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let t = 0;
+  (function loop(){
+    requestAnimationFrame(loop);
+    t += 0.01;
+    if(auto && !reduce){ targetY += 0.0038; targetX = 0.12 + Math.sin(t*0.45)*0.16; }
+    curX += (targetX - curX) * 0.08;
+    curY += (targetY - curY) * 0.08;
+    group.rotation.x = curX;
+    group.rotation.y = curY;
+    group.position.y = reduce ? 0 : Math.sin(t*0.7)*0.12;
+    renderer.render(scene, camera);
+  })();
+})();
+</script>
+</body>
+</html>

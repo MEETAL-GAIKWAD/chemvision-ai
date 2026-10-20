@@ -1,0 +1,630 @@
+{
+  "total": 54,
+  "evaluated": 54,
+  "excluded": 0,
+  "exclusions": [],
+  "correct": 1,
+  "accuracy": 0.0185,
+  "top3_accuracy": 0.0741,
+  "macro_f1": 0.0085,
+  "balanced_accuracy": 0.0213,
+  "class_map_coverage": 0.3404,
+  "per_class": {
+    "Addition Anti-Markovnikov": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Dihydroxylation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Halogenation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Hydration": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Hydrogenation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Hydrohalogenation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Addition Markovnikov": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Aldol Condensation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Cannizzaro Reaction": {
+      "support": 1,
+      "correct": 1,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    "Carbylamine Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Combustion of Ethane": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Combustion of Ethene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Combustion of Ethyne": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Combustion of Methane": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Decarboxylation Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Diazotization Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Esterification Reaction": {
+      "support": 2,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Finkelstein Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Friedel-Crafts Acylation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Friedel-Crafts Alkylation": {
+      "support": 2,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Gabriel Synthesis": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Gattermann Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Grignard Reagent Formation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Haloform Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Halogenation of Benzene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Hydration of Alkyne": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Hydrolysis of Ester": {
+      "support": 2,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Kolbe Electrolysis": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Kolbe-Schmitt Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Nitration of Benzene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Nucleophilic Substitution": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Oxidation Alcohol to Acid": {
+      "support": 2,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Oxidation Alcohol to Aldehyde": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Oxidation Alkene to Diol": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Ozonolysis": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Polymerization": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Reaction with CO2 Grignard": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Reduction Alkyne to Alkane": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Reduction Alkyne to Alkene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Reduction of Nitrobenzene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Reimer-Tiemann Reaction": {
+      "support": 3,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Rosenmund Reaction": {
+      "support": 2,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Sandmeyer Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Saponification": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Substitution Alkane Halogenation": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Sulphonation of Benzene": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Wurtz Reaction": {
+      "support": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "confusion_matrix": {
+    "Rosenmund Reaction": {
+      "Mendius Reaction": 2
+    },
+    "Addition Halogenation": {
+      "Diazotization Reaction": 1
+    },
+    "Addition Markovnikov": {
+      "Diazotization Reaction": 1
+    },
+    "Addition Hydration": {
+      "Mendius Reaction": 1
+    },
+    "Polymerization": {
+      "Mendius Reaction": 1
+    },
+    "Reimer-Tiemann Reaction": {
+      "Kolbe-Schmitt Reaction": 2,
+      "Mendius Reaction": 1
+    },
+    "Addition Anti-Markovnikov": {
+      "Mendius Reaction": 1
+    },
+    "Addition Hydrohalogenation": {
+      "Diazotization Reaction": 1
+    },
+    "Hydration of Alkyne": {
+      "Decarboxylation Reaction": 1
+    },
+    "Reduction Alkyne to Alkane": {
+      "Decarboxylation Reaction": 1
+    },
+    "Nucleophilic Substitution": {
+      "Finkelstein Reaction": 1
+    },
+    "Wurtz Reaction": {
+      "Mendius Reaction": 1
+    },
+    "Oxidation Alcohol to Aldehyde": {
+      "Mendius Reaction": 1
+    },
+    "Reaction with CO2 Grignard": {
+      "Finkelstein Reaction": 1
+    },
+    "Grignard Reagent Formation": {
+      "Diazotization Reaction": 1
+    },
+    "Addition Dihydroxylation": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Ozonolysis": {
+      "Decarboxylation Reaction": 1
+    },
+    "Oxidation Alcohol to Acid": {
+      "Mendius Reaction": 1,
+      "Diazotization Reaction": 1
+    },
+    "Addition Hydrogenation": {
+      "Diazotization Reaction": 1
+    },
+    "Nitration of Benzene": {
+      "Mendius Reaction": 1
+    },
+    "Finkelstein Reaction": {
+      "Mendius Reaction": 1
+    },
+    "Halogenation of Benzene": {
+      "Diazotization Reaction": 1
+    },
+    "Reduction Alkyne to Alkene": {
+      "Decarboxylation Reaction": 1
+    },
+    "Kolbe-Schmitt Reaction": {
+      "Decarboxylation Reaction": 1
+    },
+    "Friedel-Crafts Acylation": {
+      "Decarboxylation Reaction": 1
+    },
+    "Sandmeyer Reaction": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Friedel-Crafts Alkylation": {
+      "Finkelstein Reaction": 1,
+      "Decarboxylation Reaction": 1
+    },
+    "Combustion of Ethyne": {
+      "Diazotization Reaction": 1
+    },
+    "Combustion of Methane": {
+      "Diazotization Reaction": 1
+    },
+    "Sulphonation of Benzene": {
+      "Mendius Reaction": 1
+    },
+    "Gattermann Reaction": {
+      "Mendius Reaction": 1
+    },
+    "Diazotization Reaction": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Hydrolysis of Ester": {
+      "Mendius Reaction": 1,
+      "Finkelstein Reaction": 1
+    },
+    "Haloform Reaction": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Substitution Alkane Halogenation": {
+      "Diazotization Reaction": 1
+    },
+    "Saponification": {
+      "Cannizzaro Reaction": 1
+    },
+    "Decarboxylation Reaction": {
+      "Cannizzaro Reaction": 1
+    },
+    "Esterification Reaction": {
+      "Friedel-Crafts Alkylation": 1,
+      "Decarboxylation Reaction": 1
+    },
+    "Aldol Condensation": {
+      "Finkelstein Reaction": 1
+    },
+    "Cannizzaro Reaction": {
+      "Cannizzaro Reaction": 1
+    },
+    "Combustion of Ethene": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Oxidation Alkene to Diol": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Reduction of Nitrobenzene": {
+      "Cannizzaro Reaction": 1
+    },
+    "Carbylamine Reaction": {
+      "Friedel-Crafts Alkylation": 1
+    },
+    "Gabriel Synthesis": {
+      "Swarts Reaction": 1
+    },
+    "Kolbe Electrolysis": {
+      "Finkelstein Reaction": 1
+    },
+    "Combustion of Ethane": {
+      "Decarboxylation Reaction": 1
+    }
+  },
+  "confidence_threshold_analysis": {
+    "0.5": {
+      "selected": 0,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    "0.7": {
+      "selected": 0,
+      "coverage": 0.0,
+      "accuracy": null
+    },
+    "0.9": {
+      "selected": 0,
+      "coverage": 0.0,
+      "accuracy": null
+    }
+  },
+  "errors": [
+    {
+      "image": "pdf1-pdf_page_4_png.rf.e96da3aa374c7ac4d417ba94a1bd5a9a.jpg",
+      "true_class": "Rosenmund Reaction",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.2571
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.9af21a07196d4dc37c7c1a15d467a168.jpg",
+      "true_class": "Addition Halogenation",
+      "pred_class": "Diazotization Reaction",
+      "confidence": 0.1793
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.f102e21c9bd62ad649bd565053c97b10.jpg",
+      "true_class": "Addition Markovnikov",
+      "pred_class": "Diazotization Reaction",
+      "confidence": 0.1612
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.8357aa83a58253a4279f36098441c428.jpg",
+      "true_class": "Addition Hydration",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1334
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.92c7db68a09d7ea99ee6998756aa7cba.jpg",
+      "true_class": "Polymerization",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1918
+    },
+    {
+      "image": "pdf1-pdf_page_4_png.rf.7b9b021cb8b684cb21bb018791740594.jpg",
+      "true_class": "Reimer-Tiemann Reaction",
+      "pred_class": "Kolbe-Schmitt Reaction",
+      "confidence": 0.1947
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.913535a771d373f162afe1542515c53f.jpg",
+      "true_class": "Addition Anti-Markovnikov",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1792
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.93a5f017236ae554a8178462cdd8eab0.jpg",
+      "true_class": "Addition Hydrohalogenation",
+      "pred_class": "Diazotization Reaction",
+      "confidence": 0.3111
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.cd5304464db91a3c1dbf61a6526fa508.jpg",
+      "true_class": "Hydration of Alkyne",
+      "pred_class": "Decarboxylation Reaction",
+      "confidence": 0.1395
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.13762d692421cb3d1ea9d2e29463b2c7.jpg",
+      "true_class": "Reduction Alkyne to Alkane",
+      "pred_class": "Decarboxylation Reaction",
+      "confidence": 0.1766
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.7aa7fb93af415740bf416b37fa147190.jpg",
+      "true_class": "Nucleophilic Substitution",
+      "pred_class": "Finkelstein Reaction",
+      "confidence": 0.1453
+    },
+    {
+      "image": "pdf1-pdf_page_4_png.rf.eee7c86218bba81e7c3110d3414592ff.jpg",
+      "true_class": "Rosenmund Reaction",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1963
+    },
+    {
+      "image": "pdf1-pdf_page_4_png.rf.b2eff1b36174f29a883adb8a92acf6c4.jpg",
+      "true_class": "Reimer-Tiemann Reaction",
+      "pred_class": "Kolbe-Schmitt Reaction",
+      "confidence": 0.1856
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.ec45ecec7abe9c16d0c02481211be989.jpg",
+      "true_class": "Wurtz Reaction",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1087
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.18b31c7173c0c20425d24181f8c6b602.jpg",
+      "true_class": "Oxidation Alcohol to Aldehyde",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.1867
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.ac7057816a24cf556d568f9d37715e93.jpg",
+      "true_class": "Reaction with CO2 Grignard",
+      "pred_class": "Finkelstein Reaction",
+      "confidence": 0.1599
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.93eb35fde99c8aaeb2c0aedccdf01a13.jpg",
+      "true_class": "Grignard Reagent Formation",
+      "pred_class": "Diazotization Reaction",
+      "confidence": 0.1905
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.3c5e948421f3a93c6df0af405e12fc24.jpg",
+      "true_class": "Addition Dihydroxylation",
+      "pred_class": "Friedel-Crafts Alkylation",
+      "confidence": 0.1665
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.81d00c693112100ac0588fc2b1fa1f43.jpg",
+      "true_class": "Ozonolysis",
+      "pred_class": "Decarboxylation Reaction",
+      "confidence": 0.1233
+    },
+    {
+      "image": "class12_reactions_page-1-_png.rf.b8fb18585bdf90d3b9a4d48df963be4d.jpg",
+      "true_class": "Oxidation Alcohol to Acid",
+      "pred_class": "Mendius Reaction",
+      "confidence": 0.2236
+    }
+  ]
+}

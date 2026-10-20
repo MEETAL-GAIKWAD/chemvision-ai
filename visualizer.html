@@ -1,0 +1,576 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChemVision AI — Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0f9f6;
+  --sidebar:#eaf6f1;
+  --panel:#ffffff;
+  --stage:#e9f7f1;
+  --ink:#06212c;
+  --ink-2:#0b2b38;
+  --muted:#64808a;
+  --accent:#00a37a;
+  --accent-2:#0cbf90;
+  --accent-soft:#e3f6ef;
+  --line:rgba(6,33,44,.10);
+  --soft-panel:#f7fbf9;--control:#fff;--inset:#eef4f2;--step-hover:#f4faf8;--track:#e3ecea;
+  --warning:#fff6ec;--warning-ink:#c78c14;--note:#f7fdfb;--note-code:#eef6f2;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#0d1f1a;--sidebar:#0f2420;--panel:#142b25;--ink:#e8f5f1;--ink-2:#c9e8e0;
+  --muted:#7ba898;--accent:#00c48f;--accent-2:#0de8ac;--accent-soft:#0f3028;
+  --line:rgba(255,255,255,.09);--stage:#191b1d;--soft-panel:#192f2a;--control:#1a302b;
+  --inset:#10251f;--step-hover:#1a302b;--track:#2a403a;--warning:#302b1d;--warning-ink:#e4bd57;
+  --note:#122920;--note-code:#203a31;color-scheme:dark;
+}
+[data-theme="dark"] .lab-card{background:#0f3028}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:Inter,"Helvetica Neue",Arial,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.shell{display:grid;grid-template-columns:284px 1fr;min-height:100vh}
+
+/* ---------------- sidebar (shared) ---------------- */
+.sidebar{background:var(--sidebar);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:26px 22px 22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17.5px;letter-spacing:-.02em;padding:2px 6px 0}
+.brand .mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(0,163,122,.14);box-shadow:0 0 0 1px rgba(0,163,122,.25)}
+.brand .mark i{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(0,163,122,.18)}
+.brand span{color:var(--accent)}
+.section-label{margin:30px 0 10px;padding:0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#7d94a0}
+.nav{display:flex;flex-direction:column;gap:3px}
+.nav a{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:9px;font-size:14.5px;font-weight:600;color:var(--ink-2);transition:background .14s ease,color .14s ease}
+.nav a svg{width:18px;height:18px;flex-shrink:0}
+.nav a:hover{background:rgba(0,163,122,.08)}
+.nav a.active{background:var(--accent);color:#fff;box-shadow:0 8px 18px -8px rgba(0,163,122,.55)}
+.sidebar-spacer{flex:1}
+.lab-card{background:#ddf1e7;border:1px solid rgba(0,163,122,.18);border-radius:13px;padding:18px;margin-top:18px}
+.lab-card .flask{width:34px;height:34px;display:grid;place-items:center;color:var(--accent);margin-bottom:10px}
+.lab-card .flask svg{width:22px;height:22px}
+.lab-card h4{margin:0 0 6px;font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+.lab-card p{margin:0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.exit{display:flex;align-items:center;gap:10px;margin-top:16px;padding:11px 12px;font-size:14px;font-weight:600;color:var(--muted);border-radius:9px}
+.exit svg{width:17px;height:17px}
+.exit:hover{color:var(--ink);background:rgba(6,33,44,.05)}
+
+/* ---------------- main ---------------- */
+.main{min-width:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 40px;border-bottom:1px solid var(--line)}
+.title-block h1{margin:0;font-size:23px;font-weight:800;letter-spacing:-.03em}
+.title-block p{margin:6px 0 0;font-size:13.5px;color:var(--muted);letter-spacing:.01em}
+.title-block p sub{font-size:.7em}
+.identity{display:flex;align-items:center;gap:12px}
+.identity .who{text-align:right}
+.identity .who b{display:block;font-size:14.5px;font-weight:700}
+.identity .who span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;box-shadow:0 0 0 3px rgba(0,163,122,.15)}
+
+.content{padding:28px 40px 60px;max-width:1680px}
+
+/* ---------------- viewer + insight row ---------------- */
+.work-grid{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start}
+
+.viewer{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -22px rgba(6,33,44,.25)}
+.viewer-top{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line)}
+.viewer-top .lbl{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--muted)}
+.viewer-top .lbl .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 4px rgba(12,191,144,.18)}
+.viewer-top .lbl b{color:var(--ink);font-weight:700}
+.viewer-tools{display:flex;gap:6px}
+.tbtn{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--control);display:grid;place-items:center;color:var(--ink-2);cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.tbtn svg{width:15px;height:15px}
+.tbtn:hover{background:var(--accent-soft);border-color:rgba(0,163,122,.3);color:var(--accent)}
+
+.stage-wrap{position:relative;background:var(--stage);min-height:560px}
+.stage-wrap::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(0,163,122,.14) 1px,transparent 1px);
+  background-size:26px 26px;opacity:.5;
+}
+[data-theme="dark"] .stage-wrap::before{
+  background:radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.055),transparent 62%);
+  opacity:1;
+}
+.mode-pill{
+  position:absolute;top:18px;left:22px;z-index:3;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);background:var(--control);border:1px solid var(--line);border-radius:8px;padding:8px 13px;
+}
+#mol{position:relative;z-index:1;width:100%;height:560px;display:block;cursor:grab}
+#mol:active{cursor:grabbing}
+.viewer-empty{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:72px 24px 84px}
+.viewer-empty[hidden]{display:none}
+.viewer-empty-card{width:min(100%,640px);display:grid;grid-template-columns:minmax(160px,240px) 1fr;align-items:center;gap:22px;padding:18px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--panel) 90%,transparent);box-shadow:0 18px 50px rgba(0,0,0,.18);color:var(--ink)}
+.viewer-empty-card img{display:block;width:100%;max-height:220px;object-fit:contain;border-radius:10px;background:#fff}
+.viewer-empty-card img[hidden]{display:none}
+.viewer-empty-copy b{display:block;font-size:16px;line-height:1.35}
+.viewer-empty-copy p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.55}
+.label-toggle{width:auto;min-width:32px;padding:0 9px;font-size:11px;font-weight:700;letter-spacing:.04em}
+.legend{
+  position:absolute;left:22px;bottom:18px;z-index:3;display:flex;gap:18px;
+  background:var(--control);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:12.5px;color:var(--ink-2);
+}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.legend i.c{background:#16384a}
+.legend i.o{background:#d4472f}
+.legend i.h{background:#dfe8e6;border:1px solid #b9c6c3}
+
+.transport{display:flex;align-items:center;gap:16px;padding:16px 22px;border-top:1px solid var(--line)}
+.tbtn.play{width:38px;height:38px;background:var(--accent);border-color:var(--accent);color:#fff}
+.tbtn.play:hover{background:#008f6b}
+.tbtn.play svg{width:16px;height:16px}
+.scrub{flex:1;position:relative}
+.scrub .track{height:5px;border-radius:99px;background:var(--track);position:relative;cursor:pointer}
+.scrub .fill{position:absolute;inset:0;width:20%;background:var(--accent);border-radius:99px;transition:width .3s ease}
+.scrub .handle{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:var(--accent);border:3px solid var(--control);box-shadow:0 0 0 1px rgba(0,163,122,.4);transform:translate(-50%,-50%);left:20%;transition:left .3s ease}
+.scrub .marks{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--muted)}
+.speed{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--ink-2);background:var(--control);cursor:pointer}
+.speed svg{width:13px;height:13px}
+
+/* ---------------- insight panel ---------------- */
+.insight{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 30px -22px rgba(6,33,44,.25)}
+.insight-top{display:flex;align-items:center;justify-content:space-between}
+.chip{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 12px}
+.bookmark{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--control);display:grid;place-items:center;color:var(--ink-2);cursor:pointer}
+.bookmark svg{width:15px;height:15px}
+.bookmark.active{color:var(--accent);border-color:rgba(0,163,122,.4)}
+.insight h2{margin:14px 0 18px;font-size:22px;font-weight:800;letter-spacing:-.025em}
+
+.tabs{display:flex;gap:4px;background:var(--inset);border-radius:9px;padding:4px;margin-bottom:16px}
+.tab{flex:1;text-align:center;padding:9px 0;font-size:13.5px;font-weight:600;color:var(--muted);border-radius:7px;cursor:pointer;transition:background .15s ease,color .15s ease}
+.tab.active{background:var(--control);color:var(--ink);box-shadow:0 4px 12px -6px rgba(6,33,44,.25)}
+
+.tabpanel{display:none}
+.tabpanel.active{display:block}
+
+.steps{display:flex;flex-direction:column;gap:6px}
+.step{display:flex;align-items:center;gap:13px;padding:11px 12px;border-radius:10px;cursor:pointer;transition:background .15s ease}
+.step:hover{background:var(--step-hover)}
+.step.active{background:var(--accent-soft)}
+.step .n{width:26px;height:26px;border-radius:50%;background:var(--inset);color:var(--muted);display:grid;place-items:center;font-size:12.5px;font-weight:700;flex-shrink:0;transition:background .15s ease,color .15s ease}
+.step.active .n{background:var(--accent);color:#fff}
+.step .t{font-size:14.5px;font-weight:600;color:var(--ink-2)}
+.step.active .t{color:var(--accent)}
+
+.callout{
+  margin-top:18px;background:var(--accent-soft);border:1px solid rgba(0,163,122,.2);border-radius:12px;padding:16px 17px;
+}
+.callout .h{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink)}
+.callout .h svg{width:15px;height:15px;color:var(--accent)}
+.callout p{margin:9px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+
+.details-list{display:flex;flex-direction:column;gap:0}
+.drow{display:flex;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line);font-size:13.5px}
+.drow:last-child{border-bottom:0}
+.drow .k{color:var(--muted)}
+.drow .v{font-weight:600;text-align:right}
+
+.atoms-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.atoms-table th{text-align:left;color:var(--muted);font-weight:600;font-size:11.5px;letter-spacing:.06em;padding:0 2px 10px;text-transform:uppercase}
+.atoms-table td{padding:10px 2px;border-top:1px solid var(--line)}
+.atoms-table .sw{display:inline-flex;align-items:center;gap:8px}
+.atoms-table i{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+/* ---------------- reaction information (below) ---------------- */
+.info-card{
+  margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:30px 32px 34px;box-shadow:0 10px 30px -22px rgba(6,33,44,.25);
+}
+.info-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.info-head .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:8px}
+.info-head h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.info-head p{margin:8px 0 0;font-size:14.5px;color:var(--muted);max-width:60ch;line-height:1.6}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.live i{width:7px;height:7px;border-radius:50%;background:#c7d2cf}
+.live.on i{background:var(--accent-2);box-shadow:0 0 0 3px rgba(12,191,144,.18);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.info-stat{background:var(--soft-panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.info-stat .k{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.info-stat .v{display:block;margin-top:8px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.info-stat .v.sm{font-size:15px;font-weight:700}
+
+.info-body{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;margin-top:28px}
+.info-block h4{margin:0 0 10px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.info-block p{margin:0;font-size:14.5px;line-height:1.7;color:var(--ink-2)}
+.taglist{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.taglist span{font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 12px}
+
+.compound-list{display:flex;flex-direction:column;gap:10px}
+.compound{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--soft-panel);border:1px solid var(--line);border-radius:10px}
+.compound .name{font-size:14px;font-weight:700}
+.compound .formula{font-size:12.5px;color:var(--muted);margin-top:2px}
+.compound .role{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--accent);background:var(--control);border:1px solid rgba(0,163,122,.25);border-radius:999px;padding:5px 10px;white-space:nowrap}
+
+.safety{margin-top:24px;display:flex;gap:12px;background:var(--warning);border:1px solid rgba(199,140,20,.25);border-radius:12px;padding:16px 17px}
+.safety svg{width:19px;height:19px;color:var(--warning-ink);flex-shrink:0;margin-top:1px}
+.safety b{display:block;font-size:13.5px;margin-bottom:4px}
+.safety p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+
+.backend-note{
+  margin-top:24px;display:flex;align-items:flex-start;gap:12px;padding:14px 16px;
+  border:1px dashed rgba(0,163,122,.35);border-radius:12px;background:var(--note);font-size:12.5px;color:var(--muted);
+}
+.backend-note svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;margin-top:1px}
+.backend-note code{background:var(--note-code);padding:2px 6px;border-radius:5px;color:var(--ink-2);font-size:12px}
+
+@media (max-width:1220px){
+  .work-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+  .info-body{grid-template-columns:1fr}
+}
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{position:relative;flex-direction:row;flex-wrap:wrap;align-items:center;padding:16px 20px}
+  .sidebar-spacer,.lab-card,.exit,.section-label,.nav{display:none}
+  .topbar,.content{padding-left:22px;padding-right:22px}
+  .info-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){.viewer-empty-card{grid-template-columns:1fr;max-width:400px}.viewer-empty-card img{max-height:180px}}
+
+/* theme toggle */
+.theme-toggle{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;cursor:pointer;color:var(--muted);transition:all .14s;flex-shrink:0}
+.theme-toggle:hover{background:var(--accent-soft);border-color:rgba(0,163,122,.3);color:var(--accent)}</style>
+</head>
+<body>
+
+<div class="shell">
+  <!-- ============ sidebar ============ -->
+  <aside class="sidebar">
+    <a class="brand" href="home.html"><span class="mark"><i></i></span>ChemVision <span>AI</span></a>
+    <div class="section-label">LABORATORY</div>
+    <nav class="nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.4"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.4"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.4"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.4"/></svg>Dashboard</a>
+      <a href="studio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="9.5" ry="4.5" transform="rotate(35 12 12)"/><ellipse cx="12" cy="12" rx="9.5" ry="4.5" transform="rotate(-35 12 12)"/></svg>Molecular Studio</a>
+      <a href="flashcards.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>Flashcards</a>
+      <a href="quiz.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Chemistry Quiz</a>
+      <a href="visualizer.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 3.5l17 17M20.5 3.5l-17 17"/><circle cx="12" cy="12" r="8.5"/></svg>Visualizer</a>
+      <a href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.4-4 4.2-6 7.5-6s6.1 2 7.5 6"/></svg>Profile</a>
+    </nav>
+    <div class="sidebar-spacer"></div>
+    <div class="lab-card">
+      <div class="flask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.2L5.2 18A2 2 0 007 21h10a2 2 0 001.8-3L14 9.2V3"/></svg></div>
+      <h4>Lab workspace</h4>
+      <p>Backend-connected reaction workspace.</p>
+    </div>
+    <a class="exit" href="home.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+      Exit workspace
+    </a>
+  </aside>
+
+  <!-- ============ main ============ -->
+  <div class="main">
+    <header class="topbar">
+      <div class="title-block">
+        <h1 id="rxnTitle">Loading reaction…</h1>
+        <p id="rxnEqnTop">Fetching data from backend…</p>
+      </div>
+      <div class="identity">
+        <div class="who"><b>Dr. Maya Chen</b><span>Organic Chemistry</span></div>
+        <div class="avatar" id="topAvatar">MC</div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </header>
+
+    <div class="content">
+
+      <div class="work-grid">
+        <!-- viewer -->
+        <div class="viewer">
+          <div class="viewer-top">
+            <div class="lbl"><span class="dot"></span><b>Molecular viewport</b>&nbsp;· drag to rotate&nbsp;· scroll to zoom</div>
+            <div class="viewer-tools">
+              <button class="tbtn" id="btnReset" title="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9 9.7 9.7 0 00-6.7 2.8L3 8"/><path d="M3 3v5h5"/></svg></button>
+              <button class="tbtn" id="btnFit" title="Fit to view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/></svg></button>
+              <button class="tbtn label-toggle" id="btnLabels" type="button" aria-pressed="true" title="Toggle atom labels">Labels on</button>
+              <button class="tbtn" id="btnFull" title="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 011-1h4M20 9V5a1 1 0 00-1-1h-4M4 15v4a1 1 0 001 1h4M20 15v4a1 1 0 01-1 1h-4"/></svg></button>
+            </div>
+          </div>
+
+          <div class="stage-wrap" id="stageWrap">
+            <span class="mode-pill">BALL &amp; STICK</span>
+            <canvas id="mol"></canvas>
+            <div class="viewer-empty" id="viewerEmpty" hidden>
+              <div class="viewer-empty-card">
+                <img id="sourcePreview" alt="Uploaded reaction image" hidden>
+                <div class="viewer-empty-copy">
+                  <b id="viewerEmptyTitle">3D structure is unavailable</b>
+                  <p id="viewerEmptyText">The uploaded image is saved for review.</p>
+                </div>
+              </div>
+            </div>
+            <div class="legend">
+              <span><i class="c"></i>Carbon</span>
+              <span><i class="o"></i>Oxygen</span>
+              <span><i class="h"></i>Hydrogen</span>
+            </div>
+          </div>
+
+          <div class="transport">
+            <button class="tbtn" id="btnBack" title="Back to start"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM19 5v14l-9-7z"/></svg></button>
+            <button class="tbtn play" id="btnPlay" title="Play"><svg viewBox="0 0 24 24" fill="currentColor" id="playIcon"><path d="M8 5v14l11-7z"/></svg></button>
+            <div class="scrub">
+              <div class="track" id="track"><div class="fill" id="fill"></div><div class="handle" id="handle"></div></div>
+              <div class="marks"><span>Reactants</span><span>Transition state</span><span>Products</span></div>
+            </div>
+            <div class="speed" id="speedBtn">
+              <span id="speedLabel">1×</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- insight -->
+        <div class="insight">
+          <div class="insight-top">
+            <span class="chip" id="rxnChip">ORGANIC · CONDENSATION</span>
+            <button class="bookmark" id="bookmarkBtn" title="Save reaction">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12a1 1 0 011 1V21l-7-4-7 4V4.5a1 1 0 011-1z"/></svg>
+            </button>
+          </div>
+          <h2>Reaction insight</h2>
+
+          <div class="tabs">
+            <div class="tab active" data-tab="steps">Steps</div>
+            <div class="tab" data-tab="details">Details</div>
+            <div class="tab" data-tab="atoms">Atoms</div>
+          </div>
+
+          <div class="tabpanel active" id="panel-steps">
+            <div class="steps" id="stepsList"></div>
+            <div class="callout">
+              <div class="h">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+                What's happening?
+              </div>
+              <p id="whatText">Loading step detail…</p>
+            </div>
+          </div>
+
+          <div class="tabpanel" id="panel-details">
+            <div class="details-list" id="detailsList"></div>
+          </div>
+
+          <div class="tabpanel" id="panel-atoms">
+            <table class="atoms-table">
+              <thead><tr><th>Element</th><th>Count</th><th>Role</th></tr></thead>
+              <tbody id="atomsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ reaction information (backend-ready) ============ -->
+      <section class="info-card" id="infoCard">
+        <div class="info-head">
+          <div>
+            <div class="eyebrow">REACTION INFORMATION</div>
+            <h3 id="infoTitle">Fischer Esterification</h3>
+            <p id="infoSummary">Carboxylic acid and alcohol condense under acid catalysis to form an ester, releasing water as a by-product.</p>
+          </div>
+          <span class="live on" id="liveTag"><i></i>Sample data</span>
+        </div>
+
+        <div class="info-grid" id="infoStats">
+          <!-- populated by JS from reactionData.stats -->
+        </div>
+
+        <div class="info-body">
+          <div class="info-block">
+            <h4>Mechanism summary</h4>
+            <p id="infoMechanism">Protonation of the carbonyl oxygen activates the acid toward nucleophilic attack by the alcohol, forming a tetrahedral intermediate that collapses with loss of water to give the ester.</p>
+            <div class="taglist" id="infoTags"></div>
+          </div>
+
+          <div class="info-block">
+            <h4>Compounds in this reaction</h4>
+            <div class="compound-list" id="compoundList"></div>
+          </div>
+        </div>
+
+        <div class="safety" id="safetyBox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L2.5 18a1.6 1.6 0 001.4 2.4h16.2a1.6 1.6 0 001.4-2.4L13.7 3.9a1.6 1.6 0 00-2.8 0z"/><path d="M12 9.5v4M12 16.5v.01"/></svg>
+          <div>
+            <b id="safetyTitle">Handling note</b>
+            <p id="safetyText">Acetic acid and ethanol are flammable and irritant. Work in a ventilated area and avoid skin contact with concentrated reagents.</p>
+          </div>
+        </div>
+
+        <div class="backend-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 4 4 4M16 9l4 4-4 4M13 5l-2 15"/></svg>
+          <span>Data loaded live from <code>GET /api/reactions/{id}</code> — upload a reaction image from the dashboard to populate this page.</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* =========================================================================
+   renderReaction(data) — called by visualizer-page.js after the API load.
+   Fills every panel on the page with live reaction data.
+   ========================================================================= */
+function renderReaction(data) {
+  const safe = value => String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+  document.getElementById('rxnTitle').textContent   = data.title;
+  document.getElementById('rxnEqnTop').innerHTML    = data.equationHTML;
+  document.getElementById('rxnChip').textContent    = data.chip;
+  document.getElementById('infoTitle').textContent  = data.title;
+  document.getElementById('infoSummary').textContent   = data.summary;
+  document.getElementById('infoMechanism').textContent = data.mechanism;
+  document.getElementById('safetyTitle').textContent   = data.safety.title;
+  document.getElementById('safetyText').textContent    = data.safety.text;
+
+  // Stats grid
+  document.getElementById('infoStats').innerHTML = data.stats.map(s => `
+    <div class="info-stat">
+      <span class="k">${safe(s.k)}</span>
+      <span class="v${s.sm ? ' sm' : ''}">${safe(s.v)}</span>
+    </div>`).join('');
+
+  // Condition tags
+  document.getElementById('infoTags').innerHTML =
+    data.tags.map(t => `<span>${safe(t)}</span>`).join('');
+
+  // Compounds list — include molecular weight when available
+  document.getElementById('compoundList').innerHTML = data.compounds.map(c => `
+    <div class="compound">
+      <div>
+        <div class="name">${safe(c.coeff > 1 ? c.coeff + ' × ' + c.name : c.name)}</div>
+        <div class="formula">${safe(c.formula)}${c.weight && c.weight !== '—' ? ' &nbsp;·&nbsp; ' + safe(c.weight) : ''}</div>
+      </div>
+      <span class="role">${safe(c.role)}</span>
+    </div>`).join('');
+
+  // Details tab
+  document.getElementById('detailsList').innerHTML = data.details.map(d => `
+    <div class="drow"><span class="k">${safe(d.k)}</span><span class="v">${safe(d.v)}</span></div>`).join('');
+
+  // Atoms tab
+  document.getElementById('atomsBody').innerHTML = data.atoms.map(a => `
+    <tr>
+      <td><span class="sw"><i class="${a.cls}" style="background:${a.cls==='c'?'#16384a':a.cls==='o'?'#d4472f':'#dfe8e6'}"></i>${safe(a.el)}</span></td>
+      <td>${safe(a.count)}</td>
+      <td>${safe(a.role)}</td>
+    </tr>`).join('');
+
+  // Steps list (used by play/pause scrubber)
+  const stepsWrap = document.getElementById('stepsList');
+  stepsWrap.innerHTML = data.steps.map((s, i) => `
+    <div class="step${i === 0 ? ' active' : ''}" data-i="${i}">
+      <span class="n">${i + 1}</span><span class="t">${safe(s.title)}</span>
+    </div>`).join('');
+
+  wireSteps(data.steps);
+}
+
+/* =========================================================================
+   Step / scrubber controls (insight panel)
+   The 3-D play/pause animation is handled separately in visualizer-page.js
+   ========================================================================= */
+let currentStep = 0;
+let stepPlaying = false;
+let stepTimer   = null;
+let speed       = 1;
+
+function wireSteps(steps) {
+  const stepEls  = () => Array.from(document.querySelectorAll('.step'));
+  const whatText = document.getElementById('whatText');
+  const fill     = document.getElementById('fill');
+  const handle   = document.getElementById('handle');
+  const track    = document.getElementById('track');
+
+  function goTo(i) {
+    currentStep = Math.max(0, Math.min(steps.length - 1, i));
+    stepEls().forEach(el => el.classList.toggle('active', +el.dataset.i === currentStep));
+    if (whatText) whatText.textContent = steps[currentStep].text;
+    const pct = steps.length > 1 ? (currentStep / (steps.length - 1)) * 100 : 0;
+    if (fill)   fill.style.width  = pct + '%';
+    if (handle) handle.style.left = pct + '%';
+  }
+
+  stepEls().forEach(el => el.addEventListener('click', () => {
+    goTo(+el.dataset.i);
+  }));
+
+  if (track) {
+    track.addEventListener('click', e => {
+      const r   = track.getBoundingClientRect();
+      const pct = (e.clientX - r.left) / r.width;
+      goTo(Math.round(pct * (steps.length - 1)));
+    });
+  }
+
+  window.__goToStep   = goTo;
+  window.__stepCount  = steps.length;
+  window.__stepsData  = steps;
+  goTo(0);
+}
+
+function stopStepPlay() {
+  stepPlaying = false;
+  clearInterval(stepTimer);
+  const icon = document.getElementById('playIcon');
+  if (icon) icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+}
+
+// Speed cycle button
+const speedBtn  = document.getElementById('speedBtn');
+const speedOpts = [1, 1.5, 2, 0.5];
+if (speedBtn) {
+  speedBtn.addEventListener('click', () => {
+    const idx = speedOpts.indexOf(speed);
+    speed = speedOpts[(idx + 1) % speedOpts.length];
+    document.getElementById('speedLabel').textContent = speed + '×';
+  });
+}
+
+// Tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tabpanel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Bookmark toggle
+const bookmarkBtn = document.getElementById('bookmarkBtn');
+if (bookmarkBtn) {
+  bookmarkBtn.addEventListener('click', function () {
+    this.classList.toggle('active');
+  });
+}
+</script>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/visualizer-page.js"></script>
+</body>
+</html>

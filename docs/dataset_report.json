@@ -1,0 +1,1885 @@
+{
+  "dataset": "C:\\Users\\Meetal Gaikwad\\OneDrive\\Desktop\\finalchem\\CHEMVISION.v7i.coco",
+  "source": "Roboflow Universe CHEMVISION.v7i.coco (provided dataset README; CC BY 4.0)",
+  "all_samples_accounted_for": true,
+  "total_manifest_images": 221,
+  "total_included": 221,
+  "total_excluded": 0,
+  "split_label_overlap_with_train": {
+    "valid": [
+      "Gattermann-Koch Reaction",
+      "Hofmann Bromamide Reaction",
+      "Sandmeyer Reaction"
+    ],
+    "test": [
+      "Aldol Condensation",
+      "Cannizzaro Reaction",
+      "Carbylamine Reaction",
+      "Decarboxylation Reaction",
+      "Diazotization Reaction",
+      "Esterification Reaction",
+      "Finkelstein Reaction",
+      "Friedel-Crafts Acylation",
+      "Friedel-Crafts Alkylation",
+      "Gabriel Synthesis",
+      "Gattermann Reaction",
+      "Kolbe-Schmitt Reaction",
+      "Reimer-Tiemann Reaction",
+      "Rosenmund Reaction",
+      "Sandmeyer Reaction",
+      "Wurtz Reaction"
+    ]
+  },
+  "source_group_overlap_between_splits": {
+    "train__valid": [
+      "pdf1"
+    ],
+    "train__test": [
+      "pdf1"
+    ],
+    "valid__test": [
+      "pdf1"
+    ]
+  },
+  "exact_duplicate_groups_across_splits": [],
+  "splits": {
+    "train": {
+      "manifest_images": 153,
+      "annotations": 153,
+      "included_samples": 153,
+      "excluded_samples": 0,
+      "raw_label_count": 39,
+      "canonical_label_count": 32,
+      "raw_class_counts": {
+        "Aldol Condensation": 3,
+        "Cannizzaro Reaction": 3,
+        "Carbylamine Reaction": 3,
+        "Clamensen Reduction": 9,
+        "Clemmensen Reduction": 3,
+        "Colbe-Schmitt Reaction": 3,
+        "Coupling Reaction": 3,
+        "Decarboxylation Reaction": 6,
+        "Diazotisation Reaction": 3,
+        "Diazotization Reaction": 6,
+        "Esterification Reaction": 3,
+        "Etard Reaction": 6,
+        "Finkelstein Reaction": 6,
+        "Fittig Reaction": 6,
+        "Friedel Crafts Acylation": 6,
+        "FriedelCrafts Aclylation": 3,
+        "FriedelCrafts Alkylation": 6,
+        "Fries rearrangement": 3,
+        "Gabriel Phthalimide Reaction": 3,
+        "Gabriel Phthalimide Synthesis": 3,
+        "Gatterman Reaction": 6,
+        "Gatterman ReactionGabriel Phthalimide Reaction": 3,
+        "Gattermann Reaction": 3,
+        "GattermannKoch Reaction": 3,
+        "Hofmann Bromamide Reaction": 3,
+        "Hunsdicker Reaction": 3,
+        "KolbeSchmitt Reaction": 3,
+        "Liebermannsnitroso Reaction": 3,
+        "Mendius Reaction": 3,
+        "Perkin Reaction": 6,
+        "ReimerTiemann Reaction": 3,
+        "Rosenmund Reaction": 3,
+        "Sandmeyer Reaction": 3,
+        "Stephen Reaction": 3,
+        "Swarts Reaction": 3,
+        "Williamson Ether Synthesis": 3,
+        "WolffKishner Reduction": 3,
+        "Wurtz Reaction": 3,
+        "WurtzFittig Reaction": 6
+      },
+      "canonical_class_counts": {
+        "Aldol Condensation": 3,
+        "Cannizzaro Reaction": 3,
+        "Carbylamine Reaction": 3,
+        "Clemmensen Reduction": 12,
+        "Coupling Reaction": 3,
+        "Decarboxylation Reaction": 6,
+        "Diazotization Reaction": 9,
+        "Esterification Reaction": 3,
+        "Etard Reaction": 6,
+        "Finkelstein Reaction": 6,
+        "Fittig Reaction": 6,
+        "Friedel-Crafts Acylation": 9,
+        "Friedel-Crafts Alkylation": 6,
+        "Fries Rearrangement": 3,
+        "Gabriel Synthesis": 6,
+        "Gattermann Reaction": 12,
+        "Gattermann-Koch Reaction": 3,
+        "Hofmann Bromamide Reaction": 3,
+        "Hunsdiecker Reaction": 3,
+        "Kolbe-Schmitt Reaction": 6,
+        "Liebermann-Nitroso Reaction": 3,
+        "Mendius Reaction": 3,
+        "Perkin Reaction": 6,
+        "Reimer-Tiemann Reaction": 3,
+        "Rosenmund Reaction": 3,
+        "Sandmeyer Reaction": 3,
+        "Stephen Reaction": 3,
+        "Swarts Reaction": 3,
+        "Williamson Ether Synthesis": 3,
+        "Wolff-Kishner Reduction": 3,
+        "Wurtz Reaction": 3,
+        "Wurtz-Fittig Reaction": 6
+      },
+      "invalid_or_missing": [],
+      "duplicate_image_ids": [],
+      "annotations_with_unknown_image_id": [],
+      "exact_duplicate_groups": [],
+      "source_groups": [
+        "chem3_jpeg",
+        "pdf1"
+      ],
+      "samples": [
+        {
+          "image": "pdf1-pdf_page_5_png.rf.194b4c433f3a9bf6106e015da82b8350.jpg",
+          "label": "Hunsdiecker Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "f07cc2290b66e103544f9f87e306c56871c66a4295376a874790f8e9f2d6cfd7"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.a89851c5bb36b3da566b44e56c2f9012.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "87542ca6f2d96c43f56e148385a6e977cd9e25871607f45e7daa5850ed731cce"
+        },
+        {
+          "image": "chem3_jpeg.rf.1c42a97912b839fc228a98ae3f2ed204.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "f36b0087acc42457572e0b23e5bf7d4fe29c05c7aa7a88513af9200a873e2a03"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.6fb5135b56020fbf43dcd1f3495c7773.jpg",
+          "label": "Esterification Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "5bdfb34ebcfc15d35d77456dd66f23eea0cb17f7604c7c212f526dfe14c1b612"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.c80cdffce765f5dd0c14841866292291.jpg",
+          "label": "Hunsdiecker Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "65b729418d43bd3470a07c2e348143aaae4d0e3d183f3e7900c4e3dca852f2ab"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.914cd1dd042372732c65d28e9ff499fa.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "58cc892fc1d41e9a7c83be77e93f127e6ed149626fe67c8ebf01242857f8b4ef"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.44da5a4984cb7e4bed7a598f3873cdbf.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "ead6dc977c677d19ec4cc113fecc9462789e4952d1d311864ca4b53a3fb940b7"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.c21ea6124dc677c3c6867cfb02d744c3.jpg",
+          "label": "Esterification Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "ad60fdb81b9e2ec27a17bb9589fc67eb01c94de0eb3602f8df828041438974f9"
+        },
+        {
+          "image": "chem3_jpeg.rf.e773ffb1dac6733b9738b09bb30d8b87.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "588740a102fef1af15a85f0408c8bd2832ffa46541228488579819e8a9f812b7"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.ebf00614e2696baee2dfc8bdca5b5294.jpg",
+          "label": "Esterification Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "21ad979bc4c2a1ed68082daee4e14b80334fa5e19db78ea70dda121bddfdf15c"
+        },
+        {
+          "image": "chem3_jpeg.rf.97d91cc41ec3621e81c9edda3285670f.jpg",
+          "label": "Rosenmund Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "3011b742cb704dbc7beb449c1b64cc5eed2f6e8a1cd819a5f218e3c139d07118"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.c3ad3b31d4b9d26d4dfd1558d4830814.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "14b311034c0f3fa4713117dc7535d7767859a415eaff4c938fa2da6974762577"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.007a76041ff32062a637b35120e502c8.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "9d0ad888c958522264a8edceb584557dc3b640c03cbab4781e6207a1da077c59"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.6ac77eb8d1d8ccc6292d5848015d3fec.jpg",
+          "label": "Mendius Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "739054668528059a2c460407a15671e32d21313f866e943e4aa96bfa2acfa5f6"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.708c0cf561bf6617997d4681e4506dd0.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "6ac1ff592b2e517c038febbda93c93a9e0dd2f0771f211364ed2fa859f13cecb"
+        },
+        {
+          "image": "chem3_jpeg.rf.aa346764bddf837795712cd6bf24786e.jpg",
+          "label": "Rosenmund Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ae41edc620ebac5e09f5ed579e33a902236db1ccd25acb8e6b6a090b616e8d19"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.3f4b83bde72332fae0de1078a1fb1bf7.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d84e6d8f92c972eafd39522a0340e81dc716404c2742fce40b87972b3c530393"
+        },
+        {
+          "image": "chem3_jpeg.rf.593f9a4735434f8faeb2d65d0814a692.jpg",
+          "label": "Rosenmund Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "761e4373b87c4afefbfe89982b651f5b6adcb3fd1c52907586063727d7631e03"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.f35ec3893e34cc12db9e190560c9ce39.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "aa6e17bade43fe5a9ce90502d04cac6717409258d54c739b4ff0030aa8eb3543"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.cec2616814e05cd5fd3bb08bdc04acff.jpg",
+          "label": "Mendius Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "56359bea7bafaaf4b446c32ef7b44e57998044129d26c4b9d21c48c78a556840"
+        },
+        {
+          "image": "chem3_jpeg.rf.c438cb5afcf1e80da2e3385c464d8393.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "8669b2a1870336af2beff6499f2b405830d9356606e4efaa81d8870e667a5dcc"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.47c6c260cac0471d986bee2aa385d888.jpg",
+          "label": "Mendius Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "f08d74ad9da1e41d4095099dc478170a987e9615af673ddc2c1841e02905cc04"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.04ef6395ac3e996130e435fdcfe9d151.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "870791e286100d88b279c9430c5160286b9fae834fb577d729cd8216c104a037"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.f751a3b29adafac9dda1c23850c51fdb.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "7bc9679955e347214cd1bd53b7cad88cef2ef1ed2869519aaf8d3eab168681e9"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.540e4d28801867da9275630dd3d39678.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "6158685e25aefe9c98f7ff6eba042d0d17ca05a5d1e0cb8551277f06fe6b7d60"
+        },
+        {
+          "image": "chem3_jpeg.rf.c370ebcee7ca4bb63d6f485b7901b88a.jpg",
+          "label": "Stephen Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "6144cd4006ca61a01158ffd00dcd1cbe7880710b5faab74ddd29ac498f1bfaab"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.014318eab0ed37e27bdcc932e9d9e37f.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "e779f59259405212c129b3c83c7be156b162327acd21c2be09f544975cbd16a6"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.826b73c31cb1b63bcdf047dd8fe7c065.jpg",
+          "label": "Hunsdiecker Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "2b6ba04c9a41689a65afc1d5f1ae910f04a7a07f424bd2e30b329d0f04ac664e"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.c46a918c2c3851148c6ab8efea4af3c6.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "dc4af64c10c79a6fcee29e8bb9355bd626d00ebe2261d713e1fcd536080ded86"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.d0841e9b46241dc602c9fe8407f3d76d.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "2c0f31c999dc8e0ba3c0923c3cb9accb3bab35faa89584e85770e01c5cd7c17f"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.679f58509eabc28efffaa7758ea0b75d.jpg",
+          "label": "Liebermann-Nitroso Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "8d648b7cba7e331f2c5ace92fd2a3359d364f9949ceeec0740db876b1d8c99a2"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.b6081226a65ee191d16f0a8ff9cc3db8.jpg",
+          "label": "Liebermann-Nitroso Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "ed4510faaa4cbd3461c413219de848d5eb892a03d5cb51ac020c905fa6b44ab2"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.d25c3a7c3dccf4570139a4356bd36cd4.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "634109307360ed7285fde084506ca215b28bd369e248e0caf053e582633c85b7"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.1c0ea3cabec91ad8f39ed442c3f09715.jpg",
+          "label": "Liebermann-Nitroso Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "f9a81d7b133c2063f1294818807edcb10adbfe0de79cb33cba6c7057f349224b"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.e01c3ba2026271510bf70dfb285af1e1.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "14777e5d7556ba89453b725389baeded92454817aa95f2ff9b8e59628455d6eb"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.f0d07a5d03edee972ded06b31213b770.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "4d02a5af23fed4cb6bf4229eaacca8b74d303777a158a6b3bb5a2f318cd444d5"
+        },
+        {
+          "image": "chem3_jpeg.rf.cbfb278a646b63694fcec17561e1b814.jpg",
+          "label": "Stephen Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "1e7c052dcdd8b6305b9c53a710a3ddbb511e59e5e83de0156c4a411a3ebe3a3b"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.b5691cfbce3c33ff06f59550b1af91b8.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "5ddcc660b1a8b037936e5eb841464eb64f5c296b47f290cbe1b279e09d4d5f2f"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.646e013a96ede06278d82ff1cd8398ff.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "7c3a8839045345297e44f8da10a92e15ff0d612cac9841601c02c5a47b30c14f"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.c5414acd03dca800283635f71e5205eb.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "66e02a61c678cddc082858b2b85d790005d0779865b5ab9b76251051ff440ee2"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.cf900461d665ebb97f8d94ca22392669.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "e9f91f5089dba43bc6e3569f35a5602bf7b6be01d594271d321d51d2d280abbc"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.d515974d5f3e0ab328814cf8cd8854f7.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d5fc789ee23efeeab71d891205a353a29caffc10bc7810d487d3054e7e11679a"
+        },
+        {
+          "image": "chem3_jpeg.rf.3fbd0502a69d35dc597a28f8a6649480.jpg",
+          "label": "Stephen Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "fac343d7ccfbffe00df9a77f8779465deff09d069d0a8a22ba7783f16e87e11e"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.6d912e212f5542a585938956367cc551.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d5688a767885deae67abc3d5c08b3d3ebdf8ae22776b92caef9a696f4fea6c81"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.209c1e6800fdda2e68a0db20a3f99d61.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "c2b8fc4089d6dab348144bb6105be0c4820fd5683aca1cc8d42639eb8a6c8057"
+        },
+        {
+          "image": "chem3_jpeg.rf.4be30075b373b8c196ab77893c1e796e.jpg",
+          "label": "Gattermann-Koch Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "96ee8f7eed72458aaba6f536eb6375d946c7a493c5e69de759170cf322b4cdd6"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.f3a73209cd4ddf7fa64b91bfd507ae3b.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "362aff220fed39248f2f2379c68df78ef6630c43997b662567c19745a4231fa1"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.c2fd5e19413cf90569a11d54b8c0dc50.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "23aaf13e6e07c1242852e2bebf9f26efc35f2234d465af4f59c9760a002c5b2a"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.929e69e4d1cf1ef0500f69933fde8080.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "bfca40ab4426bc48167859dda638b4f7f07dc4c54f350e2c54442011755d7700"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.af3e64aa7ae4e4c3b129792d0b893aeb.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "49a663285fd74ffe27313df3965e66c4fa09147bd64461afe402a42ba4e6b290"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.a7e701edfb2356ed9355c0d49502e37c.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "8d832e44ac0419693c8a9975be43c58ddc22a3ba78592fd03e65fc8b1dff98ec"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.28efc5f01b82cfd4cdb3e9a4e0337248.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "8d2d1034314f4ce7d1bc50b7308a966873170d3959c1e869e80fd36e58b51660"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.aa8241c2caacfc9da4796453324b2c1b.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "300924eecb61d471160f97c9bfbc65e481c18c0ed9778eac9237b9e15df3faeb"
+        },
+        {
+          "image": "chem3_jpeg.rf.ae2fa90fcdf0412ced4ff23678b3d895.jpg",
+          "label": "Gattermann-Koch Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "468d72a04c260708f49a054bc02a2e60468cd6b326851ad9f0f8d0d12fb5963c"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.04354d1d6864803eea48584569b0adb5.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "81acb1686aa3a39f69965bb64bf7ac859ba8e5249c1c241c101c496b887c511e"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.4a3bf3805aa1e4dc0b686c66a547436f.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "aef144a1ef7117db1da236a2a73ebdc98bf1ee83f37163b1d20536c1e10bcfd8"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.526380a9ae32476988222e78d94c24eb.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "29562aabae35f477d9ce95bc508f7806c5110ff7a50718b62cbca5b9f7964a3d"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.db1ce8d16b4dfb194ce328a84df0c388.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "80b858df46ccc40896cfc17a0152f46389d7120373828a2083ffdc3e2146f8f5"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.f65e3b79bcc6b43d63b06b64e3a987bb.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "f90f2983438a1a416a516ff95555b762f6e9cc292662c316c241fcb17d1e8503"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.13b26f48578ed00cd768eca7a5c49061.jpg",
+          "label": "Fries Rearrangement",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "decba9bf0fcfc302632c5df9af0706c1a5f179122ed578f3ddf00042ba0f6ed4"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.a749f849d7d3231736205dc7c35ce543.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "ca706e41cb9e43a6df4e3e1887e308bb78e0b7cff5bd7890deb6ee9d82bfd67d"
+        },
+        {
+          "image": "chem3_jpeg.rf.bf178195c90a75208399ba81794eed2c.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "56f86505263f8e05e02e4af2a29c7759a98e88cd8d1471845e5fc7c719b7bbf2"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.bd079334ec17ea87f1c90bd6c140c95b.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "b54e2764dd549c2e449f2d300bdec51bb17f2a5bb9169beb80534ff1c8c1db4c"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.67fb76e4abf3f280945ef9e61b6d54b4.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "ddf350c2450e26467f7782650de4886bc53409ab10fd4f70d8a0d68fdaa5cdaf"
+        },
+        {
+          "image": "chem3_jpeg.rf.0b4a6e82e8c1e89e76ff39b033ab868a.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "625aa4301cf53636122f50ab730c693b2231ca275ab9a25c15d69d1262b86fd5"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.711dd021dc34e1c9d5a617120eda964b.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "9818ab4c37d61338fe2a443a88e27012b7a20d622a75654169cadf315f798f49"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.089b3c9afbd860139340e4092e56c208.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "54f451b639cdac9ef5d34db2cd8b81e7244a804e621dac542ddf8490a1b48484"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.49b6ccf879e08880570aeb5c1a606753.jpg",
+          "label": "Fries Rearrangement",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "87a67452766fbdb94a2702410f2e363cbc74e96419aec1ee90aec38b0c73dfbe"
+        },
+        {
+          "image": "pdf1-pdf_page_7_png.rf.2777fb5d5bf80a3eb59162cf50a30d3c.jpg",
+          "label": "Fries Rearrangement",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "cf2151accfdbb0b5a7a6d1c5ec363365c6176c6b52d49b5430d7c26bbcf9b92d"
+        },
+        {
+          "image": "chem3_jpeg.rf.e8a95e0ee8e6c8b9b85a13be4ed1c8a7.jpg",
+          "label": "Gattermann-Koch Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ac5084656f1e80d94c50ed091e4ba1cd6766de93519f1262e34c408ea2621c16"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.1e66b0f2074495ec0ac7f00be75b195a.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d7333095e4a1bfc744633cc0be69c62183c1628185da25bd9038799e60c96c76"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.6d434219ef82fd4a34298f414f705429.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "3fca0263290403afa13168cde5227e81e42152e2549754589c289225d28c6804"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.00321b7aa87a038f653c62d59f81c08d.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "520691fcae8a7f0f0ee6fb6cf687b00362c3787d80b8cd1cf341d3bf76265957"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.30c5a501bc4e31adbb664c9d0c0b8ca0.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "28eadcacfc71bf780998bfc513db001baca7756b8f037b9fde5732b21c3e354a"
+        },
+        {
+          "image": "chem3_jpeg.rf.5e5747b64ed7cac2764307dc5e19c20a.jpg",
+          "label": "Wolff-Kishner Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "afdd74298c1b60e75ec1c527cc07708af0a4b56621e2e1fcf2130c57d15d8698"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.9b48857781f098b165bbcd4d31a51c65.jpg",
+          "label": "Perkin Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "6c944f48c43ec6bfb976b7679b9bb660863ce9e70fcdbc5f6e89eec969487d08"
+        },
+        {
+          "image": "chem3_jpeg.rf.ffb81f69c582028c1ad123d05af47c29.jpg",
+          "label": "Wolff-Kishner Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "445f5370f2c98265c6814bca8a2e30f1e6083806c0cc3cabe7b1a93c0ac457e2"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.a180bc96eada2c4daf8194e5bc1fce3d.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "af5b8bd152bdd48f6896ed037904854da39b231fbc88ca51578d739f28c73c5b"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.6388b2953df168aa9ee10f2d4333c43b.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "38c2b5f7977f2db272d88d27f8f51d2a690c3d0285920ee5fa35731e077afa12"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.f20a640ef01cceffd86d79ba2b115a63.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "8de2d0ba4e73abe8ffe4c4c4b8e71c5ba6e03455af6f7f9e120fa3be2efb3cfa"
+        },
+        {
+          "image": "chem3_jpeg.rf.f9e849e0da19839d98dc5bbe50fac7cb.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "e812ff409545b48e50f6dbe95b2b98f5c90e5a9fda80e796ac75fdd59c7a408a"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.4dba66bf4c61bb8eca2b2bdb02e86448.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "9b5d753afd8e2f1e14fb1b12fcee19007c642d9e02fb1a90eaf00eebbc504487"
+        },
+        {
+          "image": "chem3_jpeg.rf.18403e904e5e76800f248a1debe0ea51.jpg",
+          "label": "Aldol Condensation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "a114d8792e375677be7ab0396c8dc8e7a5049ad28acbf4a15e7aaa4ac207d8b7"
+        },
+        {
+          "image": "pdf1-pdf_page_5_png.rf.ff41b8a701ab57da2b8bba77c17342ee.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "dfc2f690e625672d9b0f5771d617417c524935602766b6d3e9cf134c9710014e"
+        },
+        {
+          "image": "chem3_jpeg.rf.a65632125068014eedc09e3f99b5d798.jpg",
+          "label": "Aldol Condensation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "549f562c3e6590a836c431404fd47455043dc18a8f5792fecd267a5e4631149b"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.ca3f64d44e9d2f48ad1228424c904e1b.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d0b3f63f5bf5a24a1bb7eafff3ab52d5cfabffe8bc4268d0b55ac49466434476"
+        },
+        {
+          "image": "chem3_jpeg.rf.c0c4224c9213cd8b2286837615951da6.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "b6b5bf3a793346d7a7e87a786cd54dd993039acc6b8f971b1837f7c303e87cf3"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.d75f8dbf53c33c36dfb7dfc1d9ad5273.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "3d2d7c49725a4cf9d07854c874f5b3063d71a687032a184530de9523ff9245f9"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.d5c75821e038aec262b34454ed1f1ef6.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "525975f3f055d8263bb1c92ce9f704d4873552ff1edf6bfbf69429ccba30ed77"
+        },
+        {
+          "image": "pdf1-pdf_page_8_png.rf.9dd4a1c872e0ffd69403ab9477b0b1e5.jpg",
+          "label": "Etard Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "3c9927250cf361dbf9c6a28c11a31d456a0f4f13b07f7d7e81430ff6bb601cb7"
+        },
+        {
+          "image": "chem3_jpeg.rf.768594cbb8d8cce08a221c94a5a9ea84.jpg",
+          "label": "Cannizzaro Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "0a11d06651dc2f3836fd16bbb9b7302e2a7bd43951a576675cb79538eb8abc43"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.93051b54f674a2d01236f0bfc10f1dee.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "f2d5ca3e9c25f37b33e6ec2d3637fa09c19fdc180d9195673954e8f16c706d47"
+        },
+        {
+          "image": "chem3_jpeg.rf.88f082676ea27ee87088e3cc2fb0fa9c.jpg",
+          "label": "Cannizzaro Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ac714b0c62ace2158c7d2497504186f09ef995a184ad38f8d53d46f9549ea97b"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.928adffd6188d299d92969ed86b5a5a3.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "52de8865845b5da794b4f63c770a1dbfb495057f4a7ef09003715a8388b78411"
+        },
+        {
+          "image": "chem3_jpeg.rf.8739fb5495d1a5e0e01da2e837c41f42.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "57a262e17bc196c40f01bb7e9ca2e7404aba9fe39b6a4f0549da3006f2b02291"
+        },
+        {
+          "image": "chem3_jpeg.rf.d1415f86638ceaa444255ee00f1bd43c.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "bce1de8bc26e75e4729a53c5aa6ae6956c29bed9e05e614493d354cf75c66780"
+        },
+        {
+          "image": "chem3_jpeg.rf.753fe98d7981c6dc9109ec6b1bc0ea77.jpg",
+          "label": "Wolff-Kishner Reduction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "4728ec43e19ed81ace1f805b2e8b297312058fc3972863c458f6ac8e29812fa3"
+        },
+        {
+          "image": "chem3_jpeg.rf.9b873b3d4834aaf7fa31cb4f8e244e18.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ace5284216f363c17f375f0bc999fdb50a0e0a722ecf1168ef3b7a1dc512b1ab"
+        },
+        {
+          "image": "chem3_jpeg.rf.df492613ecd25b75252972961b17efd4.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "b9fd94198b01698a9fb17bf6599518bc34e4e206c9b37e7f62bc8e979cb073cc"
+        },
+        {
+          "image": "chem3_jpeg.rf.fc50418b4caebe24e0f57a3a769ef854.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "5cb5636e1afc06c7368039e64bee827bb879c33c95924b96e587152f399dc245"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.4bac1b172969f0facda9dbea9816c806.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "4d570261632b2ed87d8ed2ed3ce5e541b2665d96c4bd5dd93121f75457a91823"
+        },
+        {
+          "image": "chem3_jpeg.rf.d350683b24add4f01ae3e41c577c48f5.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "beefffe02833a103591b2b7aa23003a2994da51540efe0c187440b67788575e0"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.fd1f41c6696cdc128f37153ad8aa70cc.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "a0de6b0496b7765bf5cd0d5782f6bc45e2f832c31924a3c1b8f4d535b85a61cf"
+        },
+        {
+          "image": "chem3_jpeg.rf.c0aa7b16252c19e3603ae4cb1e49c121.jpg",
+          "label": "Cannizzaro Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "fe1783038bc93625ccb095e30b22c59c03d610bf04ee46561c833a2c6df19e5a"
+        },
+        {
+          "image": "chem3_jpeg.rf.843962c994fa5833c4a99acea0b38e95.jpg",
+          "label": "Williamson Ether Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ec1ba76d7a6570b38a47e001568beee8213072aed8cc8350f0effb9da319ab32"
+        },
+        {
+          "image": "chem3_jpeg.rf.201a25c195694ff4c20b50b157250a48.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "dc159bf1473775b67382cd162e50d74e64e8e8aeb859eeb64d8e65b647c8c2a5"
+        },
+        {
+          "image": "chem3_jpeg.rf.ce1e3324505221e2e0495cf7014aa201.jpg",
+          "label": "Aldol Condensation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "0d4900453fe77a3fcde3519e30fcc82fc4ad710608295942906417fdeefa7193"
+        },
+        {
+          "image": "chem3_jpeg.rf.f19c34f3cee600d6fa56fb2c52fd00de.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "213ece1d4469153e214b2e76449141dcb9e1203f71102ebea3584ce6767f22c9"
+        },
+        {
+          "image": "chem3_jpeg.rf.8a048e26924ffc1303440d81f2a700c1.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "7e0c66b4aaabe99d53dac552d1d6991fe0ab511d3131ff7e1b9b2c0d4ed8f65e"
+        },
+        {
+          "image": "pdf1-pdf_page_9_png.rf.892e442b83eec3ae5a1165ae0c1444c6.jpg",
+          "label": "Clemmensen Reduction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "0db04b461bb41d00760c4b90600ad6cec5956d9e2e7d229f3a93e0ccb36e7596"
+        },
+        {
+          "image": "chem3_jpeg.rf.7e217dd2bfaf5f9e4a822abcaff2188d.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "527344d963447dbc373475032c5d777b23c6f1444f959def89ba89b4aebffd08"
+        },
+        {
+          "image": "chem3_jpeg.rf.9529a09f9343f5006d9778f7f7ab6468.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "f982ac26aea0e78b887edc0c36a102dac40bf6cd145aad6a62013619ee99c046"
+        },
+        {
+          "image": "chem3_jpeg.rf.9d04545bf794d914a14e0beefed4b57a.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "f1a74dd80218cdb243e7f624bed390abe1764631160904baba646c0e545dc257"
+        },
+        {
+          "image": "chem3_jpeg.rf.0dbf52fd977cfbe0750efcc422040927.jpg",
+          "label": "Williamson Ether Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "cddb977b4323b2bbd4519a3244764fa44c1256227f01ddf895a27bb762ed81ff"
+        },
+        {
+          "image": "chem3_jpeg.rf.8f3ab39fff3570b53b6d9d15d0d6c93d.jpg",
+          "label": "Williamson Ether Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "164e893d9f0125300049a88831107891ca41c4b2611ccd49b0dc4982167617ba"
+        },
+        {
+          "image": "chem3_jpeg.rf.e57b15f438b40b1fdb5eb39e26948534.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "a33e4b2db72c6e762429bb2bb34564ab87165f3c2f1d5b1fa61f82a4d423e6db"
+        },
+        {
+          "image": "chem3_jpeg.rf.e377dd23592a74e3db66bfce0e27cb10.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "5cffc18c23794a2ca9c06664200c27eaf0ac3ce4d6b0ac45ec699d81ad23ff46"
+        },
+        {
+          "image": "chem3_jpeg.rf.f1a2b3e070148015f55e8826e301469c.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "e00411ba8ec084b2dfa2add5dd73c6a0a7fd960f785a69aaad9e1b05d72aa3b4"
+        },
+        {
+          "image": "chem3_jpeg.rf.8814736bd1d887dfe231c24f0474a06a.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "af92035038d127478a7dcb79818bcaade0ab6c2517b1f54dfb3feeb256bf46c4"
+        },
+        {
+          "image": "chem3_jpeg.rf.fba4e36f12763fac1eb1daed54449648.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ea1e7fad75ec4dea40d386cdf6cd6c8f7bb7a0beec7d35787707aeaffcd6c846"
+        },
+        {
+          "image": "chem3_jpeg.rf.845311d182a5c43e8103ca9c0003692d.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "3f2cf7cb388e640789ea52e11c4ce4dcced63709b533d1a95643af7d75373fa5"
+        },
+        {
+          "image": "chem3_jpeg.rf.1bd521451a9182364efd75d70fad53d2.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "d0b1495fdc0d989fc2f41c298201a4e4ae44b90ce9a4a8dbf0a335221f925884"
+        },
+        {
+          "image": "chem3_jpeg.rf.5ebdff2642e09cb87577efb38d5e99fd.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "9871f67a3408e8f64100d805900576c67b0af044e69067023451deb99abc14af"
+        },
+        {
+          "image": "chem3_jpeg.rf.6733e1e0bfd7b17eada36b265a089ddd.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "e39d8f2ce91397cb349d95f97a7722805eedebaad375e2f39aec558bf2a56bae"
+        },
+        {
+          "image": "chem3_jpeg.rf.750ae037c6ca37d168ace9d68254a6f4.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "7e3ae22a50a94ba1ec943633ed77ce460149402b9bdc3e839016873ba5d38023"
+        },
+        {
+          "image": "chem3_jpeg.rf.dd53ccff180f1d2ddb9d29da2b6cc1da.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "226af6adcf2709a4d1868e439d6a8ae892318b38aa01c55780b6a98067b4d8ca"
+        },
+        {
+          "image": "chem3_jpeg.rf.9cbbb19b7cea10007d896e6560ecd841.jpg",
+          "label": "Swarts Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "7dbff7d843a583d2b164ced8db450c6d59dec941d7c3584b0051f7f18b6d6dec"
+        },
+        {
+          "image": "chem3_jpeg.rf.dfd34f3895d09b403815ac9bafdde0d1.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "0dfeb27bd21df251e5ae71b1fad62ffa602df1be7034cd5ece8fbfd21acc59ef"
+        },
+        {
+          "image": "chem3_jpeg.rf.77cfe2eddb2bf5903c043e200d556190.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "0c4d4d7e9b53c301eeee407dcb980146c0877ae1068d3c1697521bb12fbd8eb2"
+        },
+        {
+          "image": "chem3_jpeg.rf.0410cdcfad8449ba459ab63cf85e5dae.jpg",
+          "label": "Wurtz Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "cd1debab6edc7f0d626404401458714c7eea2ebc47d63dac01f98ef709c6e8da"
+        },
+        {
+          "image": "chem3_jpeg.rf.fa80fe1105f3658b63eae4cedc94bcb0.jpg",
+          "label": "Swarts Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "945abf8a51a601bb628772e0ba2ffb09a370136a0e5bdf5a990ac33ecd7f8a77"
+        },
+        {
+          "image": "chem3_jpeg.rf.bb0f1c767a1d8115de417d12b5dbe02c.jpg",
+          "label": "Swarts Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "855158c0a9fb91adb2ef5162cd4fc532426c51e1d5d6f8ebb763da4fb81fe9f8"
+        },
+        {
+          "image": "chem3_jpeg.rf.7552eb865651a35470a4cccc55350f21.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "8c7a87ac91b741d055500b300544e65d55bfb04209e32c12f73666cb50647556"
+        },
+        {
+          "image": "chem3_jpeg.rf.cbf6f60d7fc3cbd0bdcf36aa9a053fa8.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "7cbdf0fafe6c2981d8ec704db2294996043f8de7c818a8c872b67d7ebe84b462"
+        },
+        {
+          "image": "chem3_jpeg.rf.b55831aa9dc79c99bd16883c52f71545.jpg",
+          "label": "Wurtz Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "5633f2bbbf8fed04ccae10e9971519063976d296d183d3debec57426d40835fa"
+        },
+        {
+          "image": "chem3_jpeg.rf.2b1cdf274fa5f00ec5ba1d4d46c3b29a.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "be9842c284fbe81559b64c3173f46ce19a4b08d7a9220963cd51a9cfbb48c005"
+        },
+        {
+          "image": "chem3_jpeg.rf.1679ee77f1fa2a76861beee68dc52282.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "4edcc15f7143871253804db3b7a8338a755971bbe17a8d88791e11b76c7d40db"
+        },
+        {
+          "image": "chem3_jpeg.rf.60d193a3c0e614803ab98d4a8d20d850.jpg",
+          "label": "Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "c1403fc5458225f28c9234c3c004c9733ae7d2ef96c40fab4cd7d4db62e447eb"
+        },
+        {
+          "image": "chem3_jpeg.rf.d636c9d7484e1cdc2a5e21ae46d802db.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "9893114e8dc3f4fefd27903ea5a1744991899da3d3bc3b403e2f62f9c326eb59"
+        },
+        {
+          "image": "chem3_jpeg.rf.d91e8d34cf2736dd150ebd277c5ccaad.jpg",
+          "label": "Wurtz-Fittig Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "6eeed84e2a7e1cb44b44f6c568b8ceebe62340c5d289fc45907f486fab748cae"
+        },
+        {
+          "image": "chem3_jpeg.rf.996a1bbb5d8a3a3ef5e3946294d5de63.jpg",
+          "label": "Wurtz Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ea6bc5d9d7cb644f5a337206d15570dda0bac800718a5ef6c4b6837c6d4dfb6b"
+        },
+        {
+          "image": "chem3_jpeg.rf.56ae2a6ef1f7dd265358d7576670a1b6.jpg",
+          "label": "Hofmann Bromamide Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "6ebc49e6db7caf80ccdf8cdbe4686f30ff016f438ef8608eb707b17b662c9c8e"
+        },
+        {
+          "image": "chem3_jpeg.rf.8ec6eef532f68a8444e2e533f2c6f704.jpg",
+          "label": "Hofmann Bromamide Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "6bcc84b9fcce450fc6941fc9800362d1f3d200148d793bfa827be4e981b2edd7"
+        },
+        {
+          "image": "chem3_jpeg.rf.1f6dfbb9e296ec763bdabf30b2329224.jpg",
+          "label": "Hofmann Bromamide Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "ce57a50851c1f3efd1f482fac11532e28e4809897fe8e464eb34b53f40e9368e"
+        },
+        {
+          "image": "chem3_jpeg.rf.1f594d70698ae9c2477965db74a05624.jpg",
+          "label": "Carbylamine Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "d6f2e8d33763761219a12d3e289d47438842f8eca99e410320fbf3145ce40550"
+        },
+        {
+          "image": "chem3_jpeg.rf.cf867cb3ce42b50050b28b704793cd74.jpg",
+          "label": "Coupling Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "69da83f0a604a83ef94f16c3c37e9ea6144f7d5a207f461bce61e18910bba6d9"
+        },
+        {
+          "image": "chem3_jpeg.rf.f7ce2695f5f25af0559d99b753fdd234.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "4f558570040dfef9273ddd95cbc026b57d8fb56671fb435b1e48d6f762e4c2bd"
+        },
+        {
+          "image": "chem3_jpeg.rf.1f8fec7e551491c609ae2c84fc43c652.jpg",
+          "label": "Carbylamine Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "b4864edebb5ca99b8630c741ba326d38f948ea59e36a0c4e038ae63c0f3a2ec2"
+        },
+        {
+          "image": "chem3_jpeg.rf.95b51190aedc130453c3274af96fad56.jpg",
+          "label": "Coupling Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "9ec6b11abdd55ad6d75885dbc9d79f40d35cfcffb3cdadba9140b6104e340bb5"
+        },
+        {
+          "image": "chem3_jpeg.rf.b2e18391f06e98c9da5b51a44c144dbe.jpg",
+          "label": "Coupling Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "53ff6dd53e739ea62bbc49adc3892c071054a2260d0c13181ef55ca5f1152efe"
+        },
+        {
+          "image": "chem3_jpeg.rf.610f4587c82dd7a617baf3c5b2f9c615.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "cf1c5955ec45b56106ca50a5ad8b96bfa2a3a7f2cc8980e423345851281fcbb4"
+        },
+        {
+          "image": "chem3_jpeg.rf.48246099b290daf03b23bc6d0ca82fe2.jpg",
+          "label": "Carbylamine Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "7b93896c0849e85b363b87b1f23fc0db978784196296bc1913b3e1fbdef873c1"
+        },
+        {
+          "image": "chem3_jpeg.rf.ec01052d36b6fe1ad6a557a9013a99ae.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "chem3_jpeg",
+          "sha256": "164b95d24fccd0e12c6ff101f0ccce2bc34848fc59a05354e0b82e3f4dbc1f0c"
+        }
+      ]
+    },
+    "valid": {
+      "manifest_images": 14,
+      "annotations": 14,
+      "included_samples": 14,
+      "excluded_samples": 0,
+      "raw_label_count": 7,
+      "canonical_label_count": 7,
+      "raw_class_counts": {
+        "GattermannKoch Reaction": 2,
+        "HellVolhard Zelinsky Reaction": 1,
+        "Hofmann Bromamide Reaction": 1,
+        "Holmann Ammonolysis": 1,
+        "Iodoform Reaction": 3,
+        "Sandmeyers Reaction": 3,
+        "Schotten Baumann Reaction": 3
+      },
+      "canonical_class_counts": {
+        "Gattermann-Koch Reaction": 2,
+        "Hell-Volhard-Zelinsky Reaction": 1,
+        "Hofmann Ammonolysis": 1,
+        "Hofmann Bromamide Reaction": 1,
+        "Iodoform Reaction": 3,
+        "Sandmeyer Reaction": 3,
+        "Schotten-Baumann Reaction": 3
+      },
+      "invalid_or_missing": [],
+      "duplicate_image_ids": [],
+      "annotations_with_unknown_image_id": [],
+      "exact_duplicate_groups": [],
+      "source_groups": [
+        "pdf1"
+      ],
+      "samples": [
+        {
+          "image": "pdf1-pdf_page_6_png.rf.0fd55f3086d34a87569a356fef5c8140.jpg",
+          "label": "Hofmann Bromamide Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "a17f56c2e197c61c402b3e75af654969f3ea65aa96b1e587044f7aa1612393ed"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.db52429dea498d9e1e1eb4719040edfd.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "6498def493f7c1c53a3348d2d8a2a30ddcd6b288ea0f590b1ba38cccd16bf9c1"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.35964e88955aa473fb535d1b4bf81617.jpg",
+          "label": "Schotten-Baumann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d8543f611f02b6f4ac1c21794cc7793b2800efdfa6be1257a3f815ef2ec55dcb"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.1ec165d02332dde14bb05a6573ae2395.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "7fcd8f05055e2b692b5ffebaca212f2050d27e96fe756a5da9f4923e097e49b5"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.94de08308b0b7df28fc273b05418b074.jpg",
+          "label": "Iodoform Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "5fe92dfe86fd98a1fa28bfd2a34ce3a62980e56ba52e9670bfd422e418864758"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.f9d5c8096bf9b04339843e6054d11b61.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "3497711f735cdbc2c40e344b04e6baca82d1522aceef6d30327ab41e74150f6b"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.540e27c80641be98fc85eb90b2215dfb.jpg",
+          "label": "Iodoform Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "72ba01e9446e28187935e8e95c656350f17f423c07849594e5e9651c5787c985"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.853ca1607881255c4ff591d971125056.jpg",
+          "label": "Hell-Volhard-Zelinsky Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "64e8b4d1f97423821a9470f11165bedbf5aa5086c9165cc6c8f2104df3fa5703"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.b7d18482446cb805edeadaff94bc87bf.jpg",
+          "label": "Schotten-Baumann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "064f3a18f6e7ef19897db063d3a900f7155bca30440d20bf799014597e0bd8ac"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.9f17b308b31198e653c5a71b070127fe.jpg",
+          "label": "Gattermann-Koch Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "87f8662cca4bd2f517657acb929201991df4f72a305f8d8ed15eaecfc1ae0c25"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.c61ef3da0f7f69bc2b2ac48b24f3aafd.jpg",
+          "label": "Iodoform Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "b4cff08e07a506de16b189df7d4cf73257a97fc5425ccd74d0d60a5a8021cd3f"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.dd96977aa50f6acbdb47d086e9633551.jpg",
+          "label": "Hofmann Ammonolysis",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "d3ec7509f06c64d168c093697f279a20222a1c4c005ab3e8358928534673460c"
+        },
+        {
+          "image": "pdf1-pdf_page_6_png.rf.69faf649af6db87077d03c0345c58545.jpg",
+          "label": "Gattermann-Koch Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "c858ed06cee5960dd9874b3e8285fe2d4d3058664e4f9e4729278191bec37928"
+        },
+        {
+          "image": "pdf1-pdf_page_3_png.rf.0be43560e160877671f5f0c3cb191fd8.jpg",
+          "label": "Schotten-Baumann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "0fa7fa6b5b655788eebdf54816ded08a69b07a124bcb615b7d696e1a547991d9"
+        }
+      ],
+      "unseen_class_counts": {
+        "Hell-Volhard-Zelinsky Reaction": 1,
+        "Hofmann Ammonolysis": 1,
+        "Iodoform Reaction": 3,
+        "Schotten-Baumann Reaction": 3
+      },
+      "samples_with_unseen_classes": 8
+    },
+    "test": {
+      "manifest_images": 54,
+      "annotations": 54,
+      "included_samples": 54,
+      "excluded_samples": 0,
+      "raw_label_count": 52,
+      "canonical_label_count": 47,
+      "raw_class_counts": {
+        "Addition Anti-Markovnikov": 1,
+        "Addition Dihydroxylation": 1,
+        "Addition Hydration": 1,
+        "Addition Hydrohalogenation": 1,
+        "Addition Markovnikov": 1,
+        "AdditionHalogenation": 1,
+        "AdditionHydrogenation": 1,
+        "Aldol Condensation": 1,
+        "Cannizzaro Reaction": 1,
+        "Carbamine Reaction": 1,
+        "Combustion of Ethane": 1,
+        "Combustion of Ethene": 1,
+        "Combustion of Ethyne": 1,
+        "Combustion of Methane": 1,
+        "Decarboxylation Soda Lime": 1,
+        "Diazotization": 1,
+        "Esterification": 1,
+        "Esterification Acetylation": 1,
+        "Finkelstein Reaction": 1,
+        "Friedel Crafts Acylation": 1,
+        "Friedel Crafts Alkylation": 1,
+        "Friedel Crafts Methylation": 1,
+        "Gabriel Synthesis": 1,
+        "Gattermann Reaction": 1,
+        "Grignard Reagent Formation": 1,
+        "Haloform Reaction": 1,
+        "Halogenation of Benzene": 1,
+        "Hydration of Alkyne": 1,
+        "Hydrolysis of Ester Acidic": 1,
+        "Hydrolysis of Ester Basic": 1,
+        "Kolbe Electrolysis": 1,
+        "Kolbes Reaction": 1,
+        "Nitration of Benzene": 1,
+        "Nucleophilic Substitution": 1,
+        "Oxidation Alcohol to Acid": 2,
+        "Oxidation Alcohol to Aldehyde": 1,
+        "Oxidation Alkene to Diol": 1,
+        "Ozonolysis": 1,
+        "Polymerization": 1,
+        "Reaction with CO2 Grignard": 1,
+        "Reduction Alkyne to Alkane": 1,
+        "Reduction Alkyne to Alkene": 1,
+        "Reduction of Nitrobenzene": 1,
+        "Reimer Tiemann Reaction": 1,
+        "Reimer-TiemannReaction": 1,
+        "ReimerTiemannReaction": 1,
+        "Rosenmund Reaction": 2,
+        "Sandmeyer Reaction": 1,
+        "Saponification": 1,
+        "Substitution Alkane Halogenation": 1,
+        "Sulphonation of Benzene": 1,
+        "Wurtz Reaction": 1
+      },
+      "canonical_class_counts": {
+        "Addition Anti-Markovnikov": 1,
+        "Addition Dihydroxylation": 1,
+        "Addition Halogenation": 1,
+        "Addition Hydration": 1,
+        "Addition Hydrogenation": 1,
+        "Addition Hydrohalogenation": 1,
+        "Addition Markovnikov": 1,
+        "Aldol Condensation": 1,
+        "Cannizzaro Reaction": 1,
+        "Carbylamine Reaction": 1,
+        "Combustion of Ethane": 1,
+        "Combustion of Ethene": 1,
+        "Combustion of Ethyne": 1,
+        "Combustion of Methane": 1,
+        "Decarboxylation Reaction": 1,
+        "Diazotization Reaction": 1,
+        "Esterification Reaction": 2,
+        "Finkelstein Reaction": 1,
+        "Friedel-Crafts Acylation": 1,
+        "Friedel-Crafts Alkylation": 2,
+        "Gabriel Synthesis": 1,
+        "Gattermann Reaction": 1,
+        "Grignard Reagent Formation": 1,
+        "Haloform Reaction": 1,
+        "Halogenation of Benzene": 1,
+        "Hydration of Alkyne": 1,
+        "Hydrolysis of Ester": 2,
+        "Kolbe Electrolysis": 1,
+        "Kolbe-Schmitt Reaction": 1,
+        "Nitration of Benzene": 1,
+        "Nucleophilic Substitution": 1,
+        "Oxidation Alcohol to Acid": 2,
+        "Oxidation Alcohol to Aldehyde": 1,
+        "Oxidation Alkene to Diol": 1,
+        "Ozonolysis": 1,
+        "Polymerization": 1,
+        "Reaction with CO2 Grignard": 1,
+        "Reduction Alkyne to Alkane": 1,
+        "Reduction Alkyne to Alkene": 1,
+        "Reduction of Nitrobenzene": 1,
+        "Reimer-Tiemann Reaction": 3,
+        "Rosenmund Reaction": 2,
+        "Sandmeyer Reaction": 1,
+        "Saponification": 1,
+        "Substitution Alkane Halogenation": 1,
+        "Sulphonation of Benzene": 1,
+        "Wurtz Reaction": 1
+      },
+      "invalid_or_missing": [],
+      "duplicate_image_ids": [],
+      "annotations_with_unknown_image_id": [],
+      "exact_duplicate_groups": [],
+      "source_groups": [
+        "class12_reactions",
+        "pdf1"
+      ],
+      "samples": [
+        {
+          "image": "pdf1-pdf_page_4_png.rf.e96da3aa374c7ac4d417ba94a1bd5a9a.jpg",
+          "label": "Rosenmund Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "0a34aa48f63c643a5f06d7deaf32c0bbccd85fe74266a8f91d3c54abb75a319a"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.9af21a07196d4dc37c7c1a15d467a168.jpg",
+          "label": "Addition Halogenation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "a50c4256523faae6ef6d57e7942054510620c1dcd366fe693d1a0ffc1ed5ccf0"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.f102e21c9bd62ad649bd565053c97b10.jpg",
+          "label": "Addition Markovnikov",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "5d123f1c38490e2685a0d523d6625b2391badf7de57fcf428af7f52dd026c477"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.8357aa83a58253a4279f36098441c428.jpg",
+          "label": "Addition Hydration",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "cf4f3d98bcc697093e4c44214dfae1e3992f5aa1e797b2ceef4a34ddb013761b"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.92c7db68a09d7ea99ee6998756aa7cba.jpg",
+          "label": "Polymerization",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9841921546eb4559efa06289fa02268f5ad223f10dff4bfd32e44f17de64d00b"
+        },
+        {
+          "image": "pdf1-pdf_page_4_png.rf.7b9b021cb8b684cb21bb018791740594.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "15a2f1a086711deb839b13135fe5c61115211f9c333f16a5cb1f35f591217c32"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.913535a771d373f162afe1542515c53f.jpg",
+          "label": "Addition Anti-Markovnikov",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "15cd5ca3027745d92a14882f439c55a464045ebf5ee1a59078ebac1b6215f3bb"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.93a5f017236ae554a8178462cdd8eab0.jpg",
+          "label": "Addition Hydrohalogenation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "a64712956b3b3029bf46be50d9321f7d24aab9d8907a864128f9c7358dbc158c"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.cd5304464db91a3c1dbf61a6526fa508.jpg",
+          "label": "Hydration of Alkyne",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "8b88199a356700fb969b7737eee00d81922c47fa894a4487130856f2b9570d7d"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.13762d692421cb3d1ea9d2e29463b2c7.jpg",
+          "label": "Reduction Alkyne to Alkane",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "ff5d5b36c2672c102bf11f6cf79c26583e02320b86c8a504b621a970421f7875"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.7aa7fb93af415740bf416b37fa147190.jpg",
+          "label": "Nucleophilic Substitution",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "b1c9bec93964c988cc4f6a98da016270dd13227480a5b7d35d1c058efe492ec6"
+        },
+        {
+          "image": "pdf1-pdf_page_4_png.rf.eee7c86218bba81e7c3110d3414592ff.jpg",
+          "label": "Rosenmund Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "5730cf30ddd2aa8eba77baa7fc1403aae88c7fa54e38ee3e8cd0404cf57817f6"
+        },
+        {
+          "image": "pdf1-pdf_page_4_png.rf.b2eff1b36174f29a883adb8a92acf6c4.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "pdf1",
+          "sha256": "a2afe31666a1e684f7f97a4f618c24aa88b622e46d9d04e3205c08c75f2aaf17"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.ec45ecec7abe9c16d0c02481211be989.jpg",
+          "label": "Wurtz Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "e8bb6d8429d466b2c7ac57c483dad454389c1a09557e41dfdf460f7074d1fc84"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.18b31c7173c0c20425d24181f8c6b602.jpg",
+          "label": "Oxidation Alcohol to Aldehyde",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "3d527ed1f1f5ca270655d90b202cd4c6099d9ce7fe629cfc85bcf5c513e5b066"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.ac7057816a24cf556d568f9d37715e93.jpg",
+          "label": "Reaction with CO2 Grignard",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "de9116c61389ffc070340e06452dbb8f2c4ed49adec822ea2d03c6d6c7a43d9b"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.93eb35fde99c8aaeb2c0aedccdf01a13.jpg",
+          "label": "Grignard Reagent Formation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "88e2cab9f484c740e5e19578d50737632f528d5efdb54197dba3c27609a5926d"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.3c5e948421f3a93c6df0af405e12fc24.jpg",
+          "label": "Addition Dihydroxylation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "82b3d5a6fd471cfe6503eb3ed1637c3f9119df93d67b99f7d728e64a8c6e0956"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.81d00c693112100ac0588fc2b1fa1f43.jpg",
+          "label": "Ozonolysis",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "90d54be48b325758bb03da5decbac1466c303b82b036b64aec297b6e1e11843e"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.b8fb18585bdf90d3b9a4d48df963be4d.jpg",
+          "label": "Oxidation Alcohol to Acid",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "5d6e8fca61ca0538243d99bc4ba0c429ffd7a01c1b6ef4ec2401585a40c7d3b1"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.6857a067571cb2bba7b1fe2d119e9611.jpg",
+          "label": "Addition Hydrogenation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "f218bb5a1835326c529d6fbb291cc25ccb587aed8f9d7e0129cfac9ffbec1eb8"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.8fdfb432ff6db48a90df0413e6fe23e9.jpg",
+          "label": "Nitration of Benzene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "e82913d2d065cbfa56e9c74993911ae6421901833a579f9bc7619206a59de61a"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.53057805ce0497bb4afc6d2b2b476922.jpg",
+          "label": "Finkelstein Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "6b4ba213ab2edcc21b8ced9b6c13a8d0585a3d2f8da54bf72f5579f868093699"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.f47d4611d7ec0ed620a2acf333659b8e.jpg",
+          "label": "Oxidation Alcohol to Acid",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9eabb6f2bb5ad11444a91baee98befb4c25c6ebad504bc63325a273a859e87c0"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.db7a873aa2659ff915ee2b8300ba7d9b.jpg",
+          "label": "Halogenation of Benzene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "60bb5bc418ed2e42ec160d3e99db9fb7396fe92f7fc09330ba76591ea25e120f"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.8296fcf27f449553d96789966017f60d.jpg",
+          "label": "Reduction Alkyne to Alkene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "6a6785fa01e0591c61da8f9514a164ecc4a67081b3f6321f77461a4fca7bbee4"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.d2ebceec122936246c1688b75a16f590.jpg",
+          "label": "Kolbe-Schmitt Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "78240f6aeedb8e7690b718bb0bc3130f3a3a13d13e2648d447ef6d6bd9e9216e"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.38888de1ed317ae7c3e4937679633e8f.jpg",
+          "label": "Friedel-Crafts Acylation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "43e1fe8ad35e55e33f555133a5488286abb94c83abb1dc6998a39b903cd21db6"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.673321e8698b15abafb9f2643820e910.jpg",
+          "label": "Sandmeyer Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "956c7f7f84dca61e0a2ca86f0ec732e3ef39fc0a3fa1bdeff1beca6c70bec32b"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.49b1d6dddad2c53dd3cdc137435e0a8f.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9ec5b235379a0a725df86e1bd4013f4e6d0e66b91826269a6381877dcdb15e92"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.bb6a8f39768d806abd6bdd0f738866e0.jpg",
+          "label": "Combustion of Ethyne",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "d45963dcb66c0d9f3d963b8df73b397b7407892d4d1a2b20f8ee9ba79871f6b8"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.77007a80803e19b37bb0d59e80474691.jpg",
+          "label": "Friedel-Crafts Alkylation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9c31c6a41938656f1020278d298e403c3136fef58bcc6121fa3fa0329625f83e"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.dc468a0608bb98c3bf96817016195007.jpg",
+          "label": "Combustion of Methane",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "1235b71a9d82dae9e0014dea2915ec70bacdb6458a140c24662ad6cb949e1fb6"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.d0bd2479e598cf196d978295e01c1e18.jpg",
+          "label": "Sulphonation of Benzene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "6176077ceacf28ff26d54cf28472609f5ef87bfdbbf8e3d1e0ed768f9cd0c6d7"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.eb67c03e9892483d61cff03ca1a08c09.jpg",
+          "label": "Gattermann Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "d73ae2119c90bdc256d0ad1bf595ba2ff9ce399719324ff83cc9aebacf6735d3"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.ee45cd27dcf40e849737423c4c81ada8.jpg",
+          "label": "Diazotization Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "c59a01a41bc7f991b40d52aa3818c59f2ae38a0cf824fdd18550a43ef7a53459"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.6663af6ac4ea4bacaf95238cec15a49f.jpg",
+          "label": "Hydrolysis of Ester",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "c55e2f9f0ee196ce26e4c564ac6c1fc6603dae096313fcc1ac4b948b02c4d7d2"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.02437e0e63217299de5bb5edc09fa740.jpg",
+          "label": "Haloform Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "8fa41977c12a0ad8bea527dc09745827f09cc9d35b9f4a1426b3e9f1bcc6b3e1"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.64dd30c7b111acbebbe21dc268dfb94a.jpg",
+          "label": "Substitution Alkane Halogenation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "696cefcb2723bb4c8bdbca0519555c58d559b00832e14edb58ebad241f555a74"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.8af5fb19cd6cebfc32e8eab6bd8920fc.jpg",
+          "label": "Hydrolysis of Ester",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "fa5c39b0a7dc743d78572d9a9de6fe60d14ebbee963855d5f8befd62342aa6ef"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.1442eddb4ac55b4e44282eb084f46aa7.jpg",
+          "label": "Saponification",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "a8a5c9d1e7a0900d9fb541b393a97b5774f100596f802b7a83aa10356c2bc93e"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.ac96363480c3973389979d65eeb7189f.jpg",
+          "label": "Decarboxylation Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "510248904352bb74c2e479823525c09b14a8b290c24deb934e094c52f0e6ad0c"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.20524a9e3a404f3661ea310672f4f355.jpg",
+          "label": "Esterification Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "6787a7857395f59d659eafd9ff3f84fbd96535ff0a747f03190707ecaeeb7228"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.fdd35fe3fc9cb40906096024aa9360ab.jpg",
+          "label": "Aldol Condensation",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "990ef8ecb20410e2fa5e4959b33bba9eb51f5c7ef7f00a63059cc3d562f69918"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.70fdd4f87a2131e2b68fddce7565f3d8.jpg",
+          "label": "Cannizzaro Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "5bf2f91cc91f939f1eff9c4660adff482556b523094fd634256b87be8907d8f5"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.da3227969487280bdd247d68c87ad95c.jpg",
+          "label": "Combustion of Ethene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "d7694abf694d996f698bbf0922e4e40cd4d8ff5868e17ed590b7f0cb62664971"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.2237d4ead83b6b10c340c935e23fe336.jpg",
+          "label": "Oxidation Alkene to Diol",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "87b9ff97793da786512d1f1d552c7c448e73f0cee421ac08e4b6299fb6e29b5b"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.7b9518b1690eeecdac6d79e5110438dd.jpg",
+          "label": "Reduction of Nitrobenzene",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "0ddd4ab207a7779cf2801fa76a3f35a25669ac6a6aa26b78a6cc0db150075505"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.6a8d5e662f112118c2811dacd6e75b31.jpg",
+          "label": "Reimer-Tiemann Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "858119516b34a5b9aed3ddb608c7361a1da5fba6428851e0a1218a1c9b4bfc83"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.080b63ef85d572e6dd766367462035e3.jpg",
+          "label": "Carbylamine Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "5de86ad5748c1f4a1872bebb6f89b3cb37bf11e3ba43555d2dba4db51fedc5d1"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.567e4350944bdcaeb717049e3434151a.jpg",
+          "label": "Gabriel Synthesis",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9cfd9e22eb160318853dc431c5412f3d71507126a25bad2f479418e8770307c0"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.2bb262b40c6fd56ee339fd62e3fb1e3a.jpg",
+          "label": "Kolbe Electrolysis",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "35818f101db4db7f7e9e396fda2b9a5d66bb71260389d68bf3f627643b12f644"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.b1f1a7327d0a5b1839c6e00cc784c14e.jpg",
+          "label": "Combustion of Ethane",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "5435ceeab42fe3809adb5f7178c80484b04382bfda14899f79c8a2f821de4d49"
+        },
+        {
+          "image": "class12_reactions_page-1-_png.rf.481d5a980503050e01bfb9e591f89f40.jpg",
+          "label": "Esterification Reaction",
+          "status": "included",
+          "source_group": "class12_reactions",
+          "sha256": "9907a49af414c3f597bfd6d0578c11df351aae9a17b4bd90a3bb051098c12a66"
+        }
+      ],
+      "unseen_class_counts": {
+        "Addition Anti-Markovnikov": 1,
+        "Addition Dihydroxylation": 1,
+        "Addition Halogenation": 1,
+        "Addition Hydration": 1,
+        "Addition Hydrogenation": 1,
+        "Addition Hydrohalogenation": 1,
+        "Addition Markovnikov": 1,
+        "Combustion of Ethane": 1,
+        "Combustion of Ethene": 1,
+        "Combustion of Ethyne": 1,
+        "Combustion of Methane": 1,
+        "Grignard Reagent Formation": 1,
+        "Haloform Reaction": 1,
+        "Halogenation of Benzene": 1,
+        "Hydration of Alkyne": 1,
+        "Hydrolysis of Ester": 2,
+        "Kolbe Electrolysis": 1,
+        "Nitration of Benzene": 1,
+        "Nucleophilic Substitution": 1,
+        "Oxidation Alcohol to Acid": 2,
+        "Oxidation Alcohol to Aldehyde": 1,
+        "Oxidation Alkene to Diol": 1,
+        "Ozonolysis": 1,
+        "Polymerization": 1,
+        "Reaction with CO2 Grignard": 1,
+        "Reduction Alkyne to Alkane": 1,
+        "Reduction Alkyne to Alkene": 1,
+        "Reduction of Nitrobenzene": 1,
+        "Saponification": 1,
+        "Substitution Alkane Halogenation": 1,
+        "Sulphonation of Benzene": 1
+      },
+      "samples_with_unseen_classes": 33
+    }
+  },
+  "interpretation": "This dataset cannot support a valid held-out classifier evaluation as arranged: validation and test contain classes missing from training. Do not report a metric on only the overlapping subset as full-split performance."
+}

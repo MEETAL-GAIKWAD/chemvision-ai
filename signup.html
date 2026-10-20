@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChemVision AI — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0f9f6;
+  --panel:#ffffff;
+  --ink:#06212c;
+  --ink-2:#0b2b38;
+  --muted:#5d7580;
+  --accent:#00a37a;
+  --accent-2:#0cbf90;
+  --line:rgba(6,33,44,.12);
+  --grid:rgba(0,163,122,.09);
+  --dark:#06222c;
+  --dark-2:#0a2c38;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:Inter,"Helvetica Neue",Arial,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.shell{display:grid;grid-template-columns:1.02fr 1fr;min-height:100vh}
+
+/* ---------- left: dark lab panel ---------- */
+.aside{
+  position:relative;background:var(--dark);color:#eaf4f1;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;padding:40px 48px 44px;
+}
+.aside::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 50% at 55% 45%,rgba(0,163,122,.22),transparent 70%);
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:-.02em;position:relative;z-index:2}
+.brand .mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(0,163,122,.16);box-shadow:0 0 0 1px rgba(0,163,122,.35),0 0 30px rgba(0,163,122,.35)}
+.brand .mark i{width:10px;height:10px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 5px rgba(0,163,122,.2)}
+.brand span{color:var(--accent-2)}
+
+#mol{position:absolute;inset:0;width:100%;height:100%;z-index:1;cursor:grab}
+#mol:active{cursor:grabbing}
+.ring{position:absolute;border-radius:50%;z-index:0}
+.ring.a{inset:14% 18%;border:1px solid rgba(255,255,255,.07)}
+.ring.b{inset:22% 26%;border:1px dashed rgba(0,163,122,.25);animation:spin 46s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.aside-foot{position:relative;z-index:2;max-width:38ch}
+.aside-foot h2{font-size:30px;line-height:1.14;letter-spacing:-.035em;font-weight:800;margin:0 0 12px;color:#fff}
+.aside-foot p{margin:0;color:#9fb6bd;font-size:15px;line-height:1.6}
+.chips{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.chip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
+  border-radius:999px;padding:7px 14px;font-size:12.5px;color:#cfe7df}
+
+/* ---------- right: flip stage ---------- */
+.main{position:relative;display:grid;place-items:center;padding:56px 40px}
+.grid-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),
+                   linear-gradient(to bottom,var(--grid) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(75% 70% at 50% 45%,#000 55%,transparent 100%);
+  -webkit-mask-image:radial-gradient(75% 70% at 50% 45%,#000 55%,transparent 100%);}
+.stage{position:relative;width:100%;max-width:452px;perspective:1800px;z-index:2}
+
+.flip{position:relative;transform-style:preserve-3d;transition:transform .78s cubic-bezier(.22,.85,.28,1),height .5s ease;height:560px}
+.flip.back{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0 0 auto 0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:34px 34px 30px;box-shadow:0 26px 60px -30px rgba(6,33,44,.35);
+}
+.face.b{transform:rotateY(180deg)}
+.face[aria-hidden="true"]{pointer-events:none}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 14px;
+  background:rgba(0,163,122,.10);border:1px solid rgba(0,163,122,.26);
+  font-size:11.5px;font-weight:700;letter-spacing:.11em;color:#03906d}
+h1{font-size:33px;line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:18px 0 8px}
+.sub{margin:0 0 22px;color:var(--muted);font-size:14.5px;line-height:1.6}
+
+.field{margin-bottom:14px}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:7px}
+.input{position:relative;display:flex;align-items:center}
+input[type=text],input[type=email],input[type=password]{
+  width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);
+  padding:13px 14px;border:1px solid var(--line);border-radius:9px;background:#fbfefd;
+  transition:border-color .16s ease,box-shadow .16s ease;
+}
+input::placeholder{color:#9aa9b0}
+input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,163,122,.13)}
+.peek{position:absolute;right:8px;border:0;background:none;cursor:pointer;color:var(--muted);
+  font-size:12px;font-weight:600;padding:8px}
+.peek:hover{color:var(--accent)}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 20px;font-size:13px}
+.check{display:flex;align-items:flex-start;gap:9px;color:var(--muted);line-height:1.5;cursor:pointer}
+.check input{accent-color:var(--accent);width:15px;height:15px;margin-top:1px}
+.link{color:var(--accent);font-weight:600}
+.link:hover{text-decoration:underline}
+
+.submit{
+  width:100%;border:0;cursor:pointer;background:var(--accent);color:#fff;
+  font-size:15px;font-weight:600;padding:15px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:background .15s ease,transform .12s ease;
+}
+.submit:hover{background:#008f6b}
+.submit:active{transform:translateY(1px)}
+
+.or{display:flex;align-items:center;gap:12px;margin:18px 0;color:#9aa9b0;font-size:12px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.alt{width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:12px;
+  font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:background .15s ease,border-color .15s ease}
+.alt:hover{background:#f6fbf9;border-color:rgba(0,163,122,.35)}
+.alt svg{width:17px;height:17px}
+
+.switch{margin:20px 0 0;text-align:center;font-size:14px;color:var(--muted)}
+.switch button{border:0;background:none;color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;padding:4px}
+.switch button:hover{text-decoration:underline}
+
+/* password strength */
+.meter{display:flex;gap:6px;margin-top:9px}
+.meter i{height:4px;flex:1;border-radius:99px;background:#e3ecea;transition:background .25s ease}
+.meter.s1 i:nth-child(1){background:#e2604a}
+.meter.s2 i:nth-child(-n+2){background:#e5a53c}
+.meter.s3 i:nth-child(-n+3){background:var(--accent)}
+.meter.s4 i{background:var(--accent)}
+.hint{font-size:12px;color:var(--muted);margin-top:7px;min-height:15px}
+.hint.bad{color:#c9452f}
+
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  .aside{min-height:300px;padding:26px 26px 30px}
+  .aside-foot h2{font-size:24px}
+  .main{padding:34px 20px 56px}
+}
+@media (prefers-reduced-motion:reduce){
+  .flip{transition:none}
+  .ring.b{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <!-- left -->
+  <aside class="aside">
+    <a class="brand" href="#"><span class="mark"><i></i></span>ChemVision <span>AI</span></a>
+    <div class="ring a"></div>
+    <div class="ring b"></div>
+    <canvas id="mol"></canvas>
+    <div class="aside-foot">
+      <h2>Your reactions, waiting in three dimensions.</h2>
+      <p>Sign in to pick up saved mechanisms, uploaded equations, and every molecule you left mid-rotation.</p>
+      <div class="chips"><span class="chip">Rotatable models</span><span class="chip">Step playback</span><span class="chip">Saved workspaces</span></div>
+    </div>
+  </aside>
+
+  <!-- right -->
+  <main class="main">
+    <div class="grid-bg"></div>
+    <div class="stage">
+      <div class="flip" id="flip">
+
+        <!-- SIGN IN -->
+        <section class="face a" id="faceIn">
+          <span class="eyebrow">WELCOME BACK</span>
+          <h1>Sign in to your workspace.</h1>
+          <p class="sub">Pick up exactly where your last reaction paused.</p>
+
+          <form id="formIn" novalidate>
+            <div class="field">
+              <label for="inEmail">Email</label>
+              <div class="input"><input id="inEmail" type="email" placeholder="you@lab.edu" autocomplete="email"></div>
+            </div>
+            <div class="field">
+              <label for="inPass">Password</label>
+              <div class="input">
+                <input id="inPass" type="password" placeholder="••••••••" autocomplete="current-password">
+                <button class="peek" type="button" data-peek="inPass">Show</button>
+              </div>
+            </div>
+            <div class="row">
+              <label class="check"><input type="checkbox" checked> Keep me signed in</label>
+              <a class="link" href="#">Forgot password?</a>
+            </div>
+            <p class="hint" id="hintIn"></p>
+            <button class="submit" type="submit">Enter the workspace &nbsp;→</button>
+          </form>
+
+          <div class="or">or</div>
+          <button class="alt" type="button">
+            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.2a5.3 5.3 0 01-2.3 3.5v2.9h3.7c2.2-2 3.4-5 3.4-8.6z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1 7.6-2.8l-3.7-2.9c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7H1.8v3A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.6 14.7a7.2 7.2 0 010-4.6v-3H1.8a12 12 0 000 10.6l3.8-3z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.2.6 4.4 1.7l3.3-3.3A11.6 11.6 0 0012 0 12 12 0 001.8 6.1l3.8 3C6.5 6.7 9 4.8 12 4.8z"/></svg>
+            Continue with Google
+          </button>
+
+          <p class="switch">New to ChemVision? <button type="button" data-flip="signup">Create an account</button></p>
+        </section>
+
+        <!-- SIGN UP -->
+        <section class="face b" id="faceUp" aria-hidden="true">
+          <span class="eyebrow">CREATE ACCOUNT</span>
+          <h1>Start seeing your chemistry.</h1>
+          <p class="sub">Upload an equation and watch it become a 3D story.</p>
+
+          <form id="formUp" novalidate>
+            <div class="field">
+              <label for="upName">Full name</label>
+              <div class="input"><input id="upName" type="text" placeholder="Aarav Sharma" autocomplete="name"></div>
+            </div>
+            <div class="field">
+              <label for="upEmail">Email</label>
+              <div class="input"><input id="upEmail" type="email" placeholder="you@lab.edu" autocomplete="email"></div>
+            </div>
+            <div class="field">
+              <label for="upPass">Password</label>
+              <div class="input">
+                <input id="upPass" type="password" placeholder="At least 8 characters" autocomplete="new-password">
+                <button class="peek" type="button" data-peek="upPass">Show</button>
+              </div>
+              <div class="meter" id="meter"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="row">
+              <label class="check"><input type="checkbox" id="terms"> I agree to the research use terms and privacy notice.</label>
+            </div>
+            <p class="hint" id="hintUp"></p>
+            <button class="submit" type="submit">Create account &nbsp;→</button>
+          </form>
+
+          <p class="switch">Already have an account? <button type="button" data-flip="signin">Sign in</button></p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ---------------- flip logic ---------------- */
+(function(){
+  const flip = document.getElementById('flip');
+  const faceIn = document.getElementById('faceIn');
+  const faceUp = document.getElementById('faceUp');
+
+  function focusables(face){ return face.querySelectorAll('input,button,a'); }
+
+  function setHeight(){
+    const active = flip.classList.contains('back') ? faceUp : faceIn;
+    flip.style.height = active.offsetHeight + 'px';
+  }
+
+  function show(which){
+    const toSignup = which === 'signup';
+    flip.classList.toggle('back', toSignup);
+    faceIn.setAttribute('aria-hidden', toSignup ? 'true' : 'false');
+    faceUp.setAttribute('aria-hidden', toSignup ? 'false' : 'true');
+    focusables(faceIn).forEach(el => el.tabIndex = toSignup ? -1 : 0);
+    focusables(faceUp).forEach(el => el.tabIndex = toSignup ? 0 : -1);
+    setHeight();
+    document.title = 'ChemVision AI — ' + (toSignup ? 'Create account' : 'Sign in');
+    setTimeout(()=>{ (toSignup ? faceUp : faceIn).querySelector('input').focus({preventScroll:true}); }, 420);
+  }
+
+  document.querySelectorAll('[data-flip]').forEach(b =>
+    b.addEventListener('click', () => show(b.dataset.flip))
+  );
+
+  focusables(faceUp).forEach(el => el.tabIndex = -1);
+  window.addEventListener('load', setHeight);
+  window.addEventListener('resize', setHeight);
+  setHeight();
+  if (location.hash === '#signup') show('signup');
+
+  /* show / hide password */
+  document.querySelectorAll('[data-peek]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const inp = document.getElementById(btn.dataset.peek);
+      const hidden = inp.type === 'password';
+      inp.type = hidden ? 'text' : 'password';
+      btn.textContent = hidden ? 'Hide' : 'Show';
+    });
+  });
+
+  /* password strength */
+  const meter = document.getElementById('meter');
+  const upPass = document.getElementById('upPass');
+  upPass.addEventListener('input', () => {
+    const v = upPass.value;
+    let s = 0;
+    if (v.length >= 8) s++;
+    if (/[A-Z]/.test(v) && /[a-z]/.test(v)) s++;
+    if (/\d/.test(v)) s++;
+    if (/[^A-Za-z0-9]/.test(v)) s++;
+    meter.className = 'meter' + (v ? ' s' + s : '');
+    setHeight();
+  });
+
+  // Form submission is handled by js/auth-page.js
+})();
+
+/* ---------------- molecule ---------------- */
+(function(){
+  const canvas = document.getElementById('mol');
+  if (!window.THREE || !canvas) return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0, 12);
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+  const key = new THREE.DirectionalLight(0xffffff, 0.9); key.position.set(-4, 6, 8); scene.add(key);
+  const rim = new THREE.DirectionalLight(0x5ff0c4, 0.55); rim.position.set(6, -3, -6); scene.add(rim);
+  scene.add(Object.assign(new THREE.PointLight(0xffffff, 0.55), {position:new THREE.Vector3(-3,4,6)}));
+
+  const COLORS = {C:0x16384a, O:0xd4472f, H:0xe9f2f0};
+  const RADII  = {C:0.62, O:0.66, H:0.36};
+  const atoms = [
+    {e:'C', p:[-2.25,-0.35, 0.05]}, {e:'C', p:[-0.95, 0.55, 0.20]},
+    {e:'O', p:[ 0.35,-0.30, 0.00]}, {e:'C', p:[ 1.75, 0.50,-0.10]},
+    {e:'H', p:[-2.25,-1.45, 0.35]}, {e:'H', p:[-3.15, 0.10, 0.45]},
+    {e:'H', p:[-2.45,-0.35,-1.05]}, {e:'H', p:[-0.95, 1.30,-0.70]},
+    {e:'H', p:[-0.85, 1.15, 1.20]}, {e:'H', p:[ 1.85, 1.20,-0.95]},
+    {e:'H', p:[ 1.90, 1.10, 0.80]}, {e:'H', p:[ 2.55,-0.25,-0.05]}
+  ];
+  const bonds = [[0,1],[1,2],[2,3],[0,4],[0,5],[0,6],[1,7],[1,8],[3,9],[3,10],[3,11]];
+
+  const group = new THREE.Group(); scene.add(group);
+  const sphereGeo = new THREE.SphereGeometry(1, 44, 44);
+  const mats = {};
+  const mat = e => mats[e] || (mats[e] = new THREE.MeshPhongMaterial({
+    color: COLORS[e], shininess: 92, specular: 0xaaaaaa
+  }));
+
+  atoms.forEach(a => {
+    const m = new THREE.Mesh(sphereGeo, mat(a.e));
+    m.scale.setScalar(RADII[a.e]);
+    m.position.fromArray(a.p);
+    group.add(m);
+  });
+
+  const bondGeo = new THREE.CylinderGeometry(1,1,1,18,1,true);
+  const bondMat = new THREE.MeshPhongMaterial({color:0x8fb3b6, shininess:30});
+  const up = new THREE.Vector3(0,1,0);
+  bonds.forEach(([i,j]) => {
+    const a = new THREE.Vector3().fromArray(atoms[i].p);
+    const b = new THREE.Vector3().fromArray(atoms[j].p);
+    const dir = new THREE.Vector3().subVectors(b,a);
+    const c = new THREE.Mesh(bondGeo, bondMat);
+    c.scale.set(0.11, dir.length(), 0.11);
+    c.position.copy(a).addScaledVector(dir, 0.5);
+    c.quaternion.setFromUnitVectors(up, dir.clone().normalize());
+    group.add(c);
+  });
+
+  let tx = 0.12, ty = 0.5, cx = 0.12, cy = 0.5, auto = true, drag = false, lx = 0, ly = 0, t = 0;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  canvas.addEventListener('pointerdown', e => { drag = true; auto = false; lx = e.clientX; ly = e.clientY; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointermove', e => {
+    if (!drag) return;
+    ty += (e.clientX - lx) * 0.006;
+    tx = Math.max(-1.1, Math.min(1.1, tx + (e.clientY - ly) * 0.005));
+    lx = e.clientX; ly = e.clientY;
+  });
+  ['pointerup','pointercancel','pointerleave'].forEach(ev =>
+    canvas.addEventListener(ev, () => { drag = false; auto = true; })
+  );
+
+  function resize(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.fov = w < 520 ? 48 : 38;
+    camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize); resize();
+
+  (function loop(){
+    requestAnimationFrame(loop);
+    t += 0.01;
+    if (auto && !reduce) { ty += 0.0036; tx = 0.12 + Math.sin(t * 0.45) * 0.16; }
+    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08;
+    group.rotation.set(cx, cy, 0);
+    group.position.y = reduce ? 0 : Math.sin(t * 0.7) * 0.12;
+    renderer.render(scene, camera);
+  })();
+})();
+</script>
+<script src="js/api.js"></script>
+<script src="js/auth-page.js"></script>
+</body>
+</html>
